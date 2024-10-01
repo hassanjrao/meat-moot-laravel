@@ -1,0 +1,156 @@
+/* These CSS variables are global, so they are available in all CSS modules */
+:root {
+  --color-brand--1: #f4a641;
+}
+
+/* Navbar style */
+#mainNavbar {
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1000;
+  height: 90px;
+}
+
+#mainNavbar.scrolled {
+  background-color: rgb(4, 3, 3) !important;
+  opacity: 0.8;
+  /* z-index: 4; */
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  display: none;
+}
+
+.navbar-toggler[aria-expanded="true"]::after {
+  content: "\00d7"; /* Show close button (×) */
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  z-index: 1052;
+}
+
+/* Add this to your existing CSS */
+
+/* Create a pseudo-element for the border effect */
+.nav-link {
+  position: relative; /* Set position relative to allow absolute positioning of pseudo-element */
+  color: #fbfcff;
+  font-size: 0.9rem;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 5px; /* Space for the border */
+}
+.nav-link:hover {
+  color: var(--color-brand--1) !important; /* Change color on hover */
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; /* Start from the left */
+  bottom: 0; /* Position at the bottom */
+  width: 100%; /* Full width */
+  height: 2px; /* Height of the border */
+  background-color: var(--color-brand--1); /* Color of the border */
+  transform: scaleX(0);
+  transition: transform 0.2s ease; /* Smooth transition */
+}
+
+/* Show border on hover */
+.nav-link:hover::after {
+  transform: scaleX(1);
+  /* color: var(--color-brand--1); */
+}
+
+/* Ensure text remains visible on all screen sizes */
+/* .nav-link {
+  color: #fbfcff;
+  font-size: 0.9rem;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+} */
+
+/* .nav-link:hover {
+  color: var(--color-brand--1) !important;
+} */
+
+/* border-bottom: 2px solid var(--color-brand--1);
+transition: all ease 0.3s; */
+.nav-link.active {
+  color: var(
+    --color-brand--1
+  ) !important; /* The color you want for the active link */
+}
+
+/* Responsive behavior for mobile */
+@media (max-width: 991px) {
+  /* For screens below 992px */
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100;
+    height: auto;
+    width: 100%;
+    background-color: #111;
+
+    transition: right 0.5s ease, opacity 0.5s ease !important; /* Smooth slide transition */
+    opacity: 0; /* Start with hidden opacity */
+  }
+
+  .navbar-collapse.show {
+    right: 0; /* Slide into view from the right */
+    opacity: 1; /* Make it visible */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .nav-item {
+    width: 100%;
+    border-bottom: 2px solid #1e1e1e;
+    padding: 0.5rem 2rem;
+  }
+  .nav-link {
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease !important;
+    width: 100%;
+    padding-top: 1rem;
+    z-index: 2;
+  }
+
+  /* Change color on hover (for all screen sizes) */
+  .nav-link:hover {
+    color: var(--color-brand--1) !important; /* Change color on hover */
+  }
+
+  /* Small screen behavior */
+  .nav-link::after {
+    display: none; /* Hide border effect on small screens */
+  }
+  .navbar-collapse.show .nav-link {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  /* For large screens */
+  .navbar-nav {
+    display: flex;
+    justify-content: center; /* Center nav items horizontally */
+    flex: 1; /* Pushes navbar to take up full space */
+  }
+
+  .navbar-brand {
+    flex: 1; /* Ensures the logo is centered with nav items */
+    display: flex;
+    justify-content: center;
+  }
+}
