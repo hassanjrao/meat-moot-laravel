@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // JavaScript function to navigate to another page
 function navigateToPage() {
-  window.location.href = "our-menu.html";
+  window.location.href = "/our-menu";
 }
 
 // Function to add the classes when elements come into view
