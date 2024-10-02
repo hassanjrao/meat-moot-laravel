@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Example Routes
-Route::view('/', 'front.home');
-Route::match(['get', 'post'], '/dashboard', function(){
-    return view('dashboard');
-});
-Route::view('/pages/slick', 'pages.slick');
-Route::view('/pages/datatables', 'pages.datatables');
-Route::view('/pages/blank', 'pages.blank');
+Auth::routes(['register'=>false, 'reset'=>false]);
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/menu', [HomeController::class, 'menu'])->name('menu');

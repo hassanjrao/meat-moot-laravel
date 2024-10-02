@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('front-assets/css/navbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/css/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/css/style.css') }}" />
+
+    @yield('styles')
 </head>
 
 <body>
