@@ -1,7 +1,7 @@
 .about-image {
   width: 100%;
   height: 100vh;
-  background-image: url("../media/images/about-us-bg.jpg");
+  background-image: url("/front-assets/media/images/about-us-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,7 +110,7 @@
 
 .parallax {
   /* The image used */
-  background-image: url("../media/images/meatmoot-egypt-smoked-meat-1-1018x1024.jpeg");
+  background-image: url("/front-assets/media/images/meatmoot-egypt-smoked-meat-1-1018x1024.jpeg");
 
   /* Set a specific height */
   height: auto;

@@ -2,7 +2,7 @@
 .hero-section {
   position: relative;
   height: 100vh; /* Full screen height */
-  background: url("{{ asset('front-assets/media/images/menu/meatmoot-menu-presentation.webp') }}")
+  background: url("/front-assets/media/images/menu/meatmoot-menu-presentation.webp")
     no-repeat center center;
   background-size: cover;
   z-index: 1;

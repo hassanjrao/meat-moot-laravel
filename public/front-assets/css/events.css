@@ -1,6 +1,6 @@
 .events-hero-section {
-  background-image: url("/assets/media/images/event-page-bg.jpeg");
-  background-image: url(../../assets/media/images/event-page-bg.jpeg);
+    /* media/images/event-page-bg.jpeg */
+  background-image: url("/front-assets/media/images/event-page-bg.jpeg");
   background-position: center;
   background-size: cover;
   height: 100vh;

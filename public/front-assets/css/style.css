@@ -423,7 +423,7 @@
 
 /* Section INfo */
 .section-banner {
-  background: url("{{ asset('front-assets/media/images/static-bg.jpg') }}") no-repeat center
+  background: url('/front-assets/media/images/static-bg.jpg') no-repeat center
     center/cover;
   height: 65vh;
   position: relative;
@@ -578,7 +578,7 @@
 /* Rating section  */
 
 .section-review {
-  background: url("{{ asset('front-assets/media/images/static-bg.jpg') }}") no-repeat center
+  background: url('/front-assets/media/images/static-bg.jpg')  no-repeat center
     center/cover;
   height: 45vh;
   position: relative;

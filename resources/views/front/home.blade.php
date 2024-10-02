@@ -1,5 +1,8 @@
 @extends('layouts.front')
 
+@section('page-title','Home')
+
+
 @section('content')
     <!-- Hero Section -->
     <div class="container-fluid p-0 hero-section d-flex justify-content-center align-items-center">

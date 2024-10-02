@@ -7,6 +7,9 @@
 
 @endsection
 
+@section('page-title','Menu')
+
+
 @section('content')
     <section class="hero-section d-flex justify-content-center align-items-center">
         <div class="content text-center">

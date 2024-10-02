@@ -22,7 +22,7 @@
 .about-image {
   width: 100%;
   height: 100vh;
-  background-image: url("..//media/images/meat-moot-new-cairo-opening3-768x511.jpeg");
+  background-image: url("/front-assets/media/images/meat-moot-new-cairo-opening3-768x511.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

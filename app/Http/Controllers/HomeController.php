@@ -22,4 +22,24 @@ class HomeController extends Controller
     public function menu(){
         return view('front.menu');
     }
+
+    public function ourMenu(){
+        return view('front.our-menu');
+    }
+
+    public function about(){
+        return view('front.about');
+    }
+
+    public function contact(){
+        return view('front.contact');
+    }
+
+    public function eventNews(){
+        return view('front.events-and-news');
+    }
+
+    public function investors(){
+        return view('front.investors');
+    }
 }

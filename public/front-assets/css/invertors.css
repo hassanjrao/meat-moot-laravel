@@ -8,13 +8,13 @@
 } */
 @font-face {
   font-family: "Playfair Display";
-  src: url("fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
-    url("fonts/PlayfairDisplay-Regular.woff") format("woff");
+  src: url("/front-assets/fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
+    url("/front-assets/fonts/PlayfairDisplay-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 .invertors-hero-section {
-  background: url("../../assets/media/images/investors-hero-img.jpg");
+  background: url("/front-assets/media/images/investors-hero-img.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@
 /* Branches */
 
 .branches-section {
-  background-image: url(../../assets/media/images/static-bg.jpg);
+  background-image: url('/front-assets/media/images/static-bg.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=no" />
-    <title>Home - Meat Moot | Best Smoked Meat Restaurant - Let's MEAT</title>
+    <title>@yield('page-title') - {{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('front-assets/vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" />
@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="mainNavbar">
         <div class="container-fluid align-items-center mx-auto justify-content-around">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.png') }}" alt="Logo"
                     height="" class="ms-auto" />
             </a>
@@ -31,26 +31,26 @@
             <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav gap-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link text-light" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="about.html">About</a>
+                        <a class="nav-link text-light" href="{{ route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="menu.html">Menu</a>
+                        <a class="nav-link text-light" href="{{ route('menu') }}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="investors.html">Investors</a>
+                        <a class="nav-link text-light" href="{{ route('investors') }}">Investors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="events-and-news.html">Events & News</a>
+                        <a class="nav-link text-light" href="{{ route('event-news') }}">Events & News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="contact.html">Contact</a>
+                        <a class="nav-link text-light" href="{{ route('contact') }}">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#en.html" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
+                        {{-- <a class="nav-link dropdown-toggle text-light" href="#en.html" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a> --}}
                         <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">English</a></li>
                 <li><a class="dropdown-item" href="#">Spanish</a></li>
@@ -135,6 +135,8 @@
 
     <script src="{{ asset('front-assets/js/script.js') }}"></script>
     <script src="{{ asset('front-assets/js/common.js') }}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>
