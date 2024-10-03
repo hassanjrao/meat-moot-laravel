@@ -3,10 +3,10 @@
 @section('styles')
 
 
-<link rel="stylesheet" href="{{  asset('front-assets/css/our-menu.css')}}" />
+    <link rel="stylesheet" href="{{ asset('front-assets/css/our-menu.css') }}" />
 @endsection
 
-@section('page-title','Our Menu')
+@section('page-title', 'Our Menu')
 
 
 @section('content')
@@ -18,10 +18,10 @@
                 <div class="heading-hr"></div>
                 <h4 class="text-center country m-3 py-3">Al-hasan Saudia Arabia</h4>
                 <div class="container d-flex align-items-center justify-content-center py-3">
-                    <img src="{{  asset('front-assets/media/images/download (8).svg')}}" class="img-fluid mx-2" />
-                    <img src="{{  asset('front-assets/media/images/download (12).svg')}}" class="img-fluid mx-2" />
-                    <img src="{{  asset('front-assets/media/images/downloadWhatsapp.svg')}}" class="img-fluid mx-2" />
-                    <img src="{{  asset('front-assets/media/images/download (4).svg')}}" class="img-fluid mx-2" />
+                    <img src="{{ asset('front-assets/media/images/download (8).svg') }}" class="img-fluid mx-2" />
+                    <img src="{{ asset('front-assets/media/images/download (12).svg') }}" class="img-fluid mx-2" />
+                    <img src="{{ asset('front-assets/media/images/downloadWhatsapp.svg') }}" class="img-fluid mx-2" />
+                    <img src="{{ asset('front-assets/media/images/download (4).svg') }}" class="img-fluid mx-2" />
                 </div>
             </div>
         </div>
@@ -38,155 +38,37 @@
         </div>
 
         <!-- third portion -->
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking 8 out of 12 columns -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1" src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
 
-                <!-- Column 2 taking 4 out of 12 columns -->
-                <div class="col-sm-10 col-12">
-                    <h3 class="heading text-start">LAMB SHANK</h3>
-                    <h5 class="text-light">
-                        The finest and tasties smoked shank, it comes with 14 sauce 7
-                        salad and beverage of your choice
-                    </h5>
-                    <h2 class="text-end dotted-border-bottom pb-3 menu">546kg</h2>
+        @foreach ($menus as $menu)
+            <div class="container mt-5">
+                <div class="row background">
+                    <!-- Column 1 taking 8 out of 12 columns -->
+                    <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
+                        <img class="image-fluid image-menu-1"
+                            src="{{ $menu->image_url }}" />
+                        <p class="mt-2">⭐⭐⭐⭐⭐</p>
+                    </div>
+
+                    <!-- Column 2 taking 4 out of 12 columns -->
+                    <div class="col-sm-10 col-12">
+                        <h3 class="heading text-start">
+                            {{ $menu->title }}
+                        </h3>
+                        <h5 class="text-light">
+                            {{ $menu->description }}
+                        </h5>
+                        <h2 class="text-end dotted-border-bottom pb-3 menu">
+                            {{ $menu->serving }}
+                        </h2>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking up 8 out of 12 columns on small screens and above -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1" src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
-
-                <!-- Column 2 taking up 4 out of 12 columns on small screens and above -->
-                <div class="col-sm-10 col-12">
-                    <h3 class="heading text-start">LAMB NECK</h3>
-                    <h5 class="text-light">
-                        The Authentic smoked neck Meat, it comes with 14 sauce 7 salad and
-                        beverage of your choice
-                    </h5>
-                    <h2 class="menu text-end dotted-border-bottom pb-3">546kg</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking up 8 out of 12 columns on small screens and above -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1" src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
-
-                <!-- Column 2 taking up 4 out of 12 columns on small screens and above -->
-                <div class="col-sm-10 col-12">
-                    <h3 class="heading text-start">LAMB SHOULDER</h3>
-                    <h5 class="text-light">
-                        The Authentic smoked Meat, it comes with 14 sauce 7 salad and
-                        beverage of your choice
-                    </h5>
-                    <h2 class="menu text-end dotted-border-bottom pb-3">546kg</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking up 8 out of 12 columns on small screens and above -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1" src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
-
-                <!-- Column 2 taking up 4 out of 12 columns on small screens and above -->
-                <div class="col-sm-10 col-12">
-                    <h3 class="heading text-start">LAMB RIBS</h3>
-                    <h5 class="text-light">
-                        The finest smoked ribs, it comes with 14 sauce 7 salad and
-                        beverage of your choice
-                    </h5>
-                    <h2 class="menu text-end dotted-border-bottom pb-3">546kg</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking up 8 out of 12 columns on small screens and above -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1 pb-3"
-                        src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
-
-                <!-- Column 2 taking up 4 out of 12 columns on small screens and above -->
-                <div class="col-sm-10 col-12">
-                    <h3 class="heading text-start">BEEF RIBS</h3>
-                    \
-                    <h5 class="text-light">
-                        Juicy and Flavourful Ribs, it comes with 14 sauce 7 salad and
-                        beverage of your choice
-                    </h5>
-                    <h2 class="menu text-end dotted-border-bottom pb-3">546kg</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking up 8 out of 12 columns on small screens and above -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1" src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
-
-                <!-- Column 2 taking up 4 out of 12 columns on small screens and above -->
-                <div class="col-sm-10 col-12">
-                    <h3 class="heading text-start">BEEF BRISKET</h3>
-                    <h5 class="text-light">
-                        Tinder Brisket, it comes with 14 sauce 7 salad and beverage of
-                        your choice
-                    </h5>
-                    <h2 class="menu text-end dotted-border-bottom pb-3">546kg</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-5">
-            <div class="row background">
-                <!-- Column 1 taking up 8 out of 12 columns on small screens and above -->
-                <div class="col-sm-2 col-12 d-flex flex-column align-items-center justify-content-end background">
-                    <img class="image-fluid image-menu-1" src="{{  asset('front-assets/media/images/LAMB-NECK-MEAT-MOOT-2-300x240.webp')}}" />
-                    <p class="mt-2">⭐⭐⭐⭐⭐</p>
-                </div>
-
-                <!-- Column 2 taking up 4 out of 12 columns on small screens and above -->
-                <div class="col-sm-10 col-12 background">
-                    <h3 class="heading text-start">BEEF SHANK</h3>
-                    <h5 class="text-light">
-                        Tindered smoked shank, it comes with 14 sauce 7 salad and beverage
-                        of your choice
-                    </h5>
-                    <h2 class="menu text-end dotted-border-bottom pb-3">546kg</h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
+     
 
         <!--
-        numbers above dynamic pictures -->
+            numbers above dynamic pictures -->
 
         <div class="p-3 text-white">
             <div>
@@ -204,15 +86,16 @@
                 <!-- First Column -->
                 <div class="col-12 col-md-6 d-none d-md-block clickable-image">
                     <div class="p-3 dynamic-images">
-                        <img src="{{  asset('front-assets/media/images/food-condiment-with-spices-MEATMOOT-scaled.webp')}}" class="img-fluid"
-                            id="dynamicImage" />
+                        <img src="{{ asset('front-assets/media/images/food-condiment-with-spices-MEATMOOT-scaled.webp') }}"
+                            class="img-fluid" id="dynamicImage" />
                     </div>
                 </div>
 
                 <!-- Second Column -->
                 <div class="col-12 col-md-6">
                     <div class="d-flex text-light p-3 background-two mb-3"
-                        data-image="{{  asset('front-assets/media/images/food-condiment-with-spices-MEATMOOT-scaled.webp')}}" data-number="01">
+                        data-image="{{ asset('front-assets/media/images/food-condiment-with-spices-MEATMOOT-scaled.webp') }}"
+                        data-number="01">
                         <i class="fa-solid fa-bowl-rice pt-3 px-2"></i>
                         <div>
                             <h4 class="menu py-2">14 Sauce</h4>
@@ -227,7 +110,8 @@
                     </div>
 
                     <div class="d-flex text-light p-3 background-two mb-3"
-                        data-image="{{  asset('front-assets/media/images/meat-moot-happy-customers3-1365x2048.jpeg')}}" data-number="02">
+                        data-image="{{ asset('front-assets/media/images/meat-moot-happy-customers3-1365x2048.jpeg') }}"
+                        data-number="02">
                         <i class="fa-solid fa-bowl-food pt-3 px-2"></i>
                         <div>
                             <h4 class="menu py-2">7 SALAD AND APPETIZER</h4>
@@ -241,7 +125,7 @@
                     </div>
 
                     <div class="d-flex text-light p-3 background-two mb-3" data-number="03"
-                        data-image="{{  asset('front-assets/media/images/rice-meatmoot.png')}}">
+                        data-image="{{ asset('front-assets/media/images/rice-meatmoot.png') }}">
                         <i class="fa-solid fa-martini-glass-citrus pt-3 px-2"></i>
                         <div>
                             <h4 class="menu py-2">RICE</h4>
@@ -255,7 +139,7 @@
                     </div>
 
                     <div class="d-flex text-light p-3 background-two mb-3" data-number="04"
-                        data-image="{{  asset('front-assets/media/images/cold-drink.jpeg')}}">
+                        data-image="{{ asset('front-assets/media/images/cold-drink.jpeg') }}">
                         <i class="fa-solid fa-martini-glass-citrus pt-3 px-2"></i>
                         <div>
                             <h4 class="menu py-2">BEVERAGES</h4>
@@ -331,7 +215,7 @@
             </div>
 
             <div class="letsmeat pb-5 d-flex justify-content-center align-content-center">
-                <img src="{{  asset('front-assets/media/images/letsmeat.png')}}" />
+                <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" />
             </div>
         </div>
 
@@ -348,26 +232,26 @@
                                 <div class="d-flex align-items-center justify-content-center">
                                     <!-- Use Bootstrap grid system -->
                                     <div class="my-2">
-                                        <img src="{{  asset('front-assets/media/images/download (12).svg')}}" class="img-fluid mx-2 mb-4"
-                                            alt="Image 1" />
+                                        <img src="{{ asset('front-assets/media/images/download (12).svg') }}"
+                                            class="img-fluid mx-2 mb-4" alt="Image 1" />
                                     </div>
                                     <div class="my-2">
-                                        <img src="{{  asset('front-assets/media/images/download (5).svg')}}" class="img-fluid mx-2 mb-4"
-                                            alt="Image 5" />
-                                    </div>
-
-                                    <div class="my-2">
-                                        <img src="{{  asset('front-assets/media/images/download (8).svg')}}" class="img-fluid mx-2 mb-4"
-                                            alt="Image 5" />
-                                    </div>
-                                    <div class="my-2">
-                                        <img src="{{  asset('front-assets/media/images/download (3).svg')}}" class="img-fluid mx-2 mb-4"
-                                            alt="Image 3" />
+                                        <img src="{{ asset('front-assets/media/images/download (5).svg') }}"
+                                            class="img-fluid mx-2 mb-4" alt="Image 5" />
                                     </div>
 
                                     <div class="my-2">
-                                        <img src="{{  asset('front-assets/media/images/download (4).svg')}}" class="img-fluid mx-2 mb-4"
-                                            alt="Image 2" />
+                                        <img src="{{ asset('front-assets/media/images/download (8).svg') }}"
+                                            class="img-fluid mx-2 mb-4" alt="Image 5" />
+                                    </div>
+                                    <div class="my-2">
+                                        <img src="{{ asset('front-assets/media/images/download (3).svg') }}"
+                                            class="img-fluid mx-2 mb-4" alt="Image 3" />
+                                    </div>
+
+                                    <div class="my-2">
+                                        <img src="{{ asset('front-assets/media/images/download (4).svg') }}"
+                                            class="img-fluid mx-2 mb-4" alt="Image 2" />
                                     </div>
                                 </div>
                             </div>
@@ -375,7 +259,7 @@
                     </div>
                     <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
                         <div class="content last-section">
-                            <img src="{{  asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg')}}"
+                            <img src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
                                 class="img-fluid" />
                         </div>
                     </div>
@@ -387,7 +271,8 @@
                                 Sıtkı Bey Plaza No:82 K:7 34736 Kadıköy - ISTANBUL, TURKEY.
                             </h6>
                             <h6 class="text-light text-center">Istanbol</h6>
-                            <img src="{{  asset('front-assets/media/images/letsmeat.png')}}" class="let-meet img-fluid pt-2" />
+                            <img src="{{ asset('front-assets/media/images/letsmeat.png') }}"
+                                class="let-meet img-fluid pt-2" />
                         </div>
                     </div>
                 </div>
@@ -403,85 +288,84 @@
             </div>
         </div>
         <!-- <div class="container-fluid footer-section p-0 m-0">
-          <div class="container px-5">
-            <div class="row">
-              <div
-                class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-              >
-                <div class="content py-5 last-section">
-                  <h1 style="font-size: 2.5rem; color: orange">Stay Connected</h1>
-                  <div class="d-flex flex-wrap justify-content-center pt-5 gap-3">
-                    <img
-                      src="{{  asset('front-assets/media/images/download (12).svg')}}"
-                      class="img-fluid"
-                      alt="Image 3"
-                    />
+              <div class="container px-5">
+                <div class="row">
+                  <div
+                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
+                  >
+                    <div class="content py-5 last-section">
+                      <h1 style="font-size: 2.5rem; color: orange">Stay Connected</h1>
+                      <div class="d-flex flex-wrap justify-content-center pt-5 gap-3">
+                        <img
+                          src="{{ asset('front-assets/media/images/download (12).svg') }}"
+                          class="img-fluid"
+                          alt="Image 3"
+                        />
 
-                    <img
-                      src="{{  asset('front-assets/media/images/download (5).svg')}}"
-                      class="img-fluid"
-                      alt="Image 2"
-                    />
-                    <img
-                      src="{{  asset('front-assets/media/images/download (8).svg')}}"
-                      class="img-fluid"
-                      alt="Image 1"
-                    />
+                        <img
+                          src="{{ asset('front-assets/media/images/download (5).svg') }}"
+                          class="img-fluid"
+                          alt="Image 2"
+                        />
+                        <img
+                          src="{{ asset('front-assets/media/images/download (8).svg') }}"
+                          class="img-fluid"
+                          alt="Image 1"
+                        />
 
-                    <img
-                      src="{{  asset('front-assets/media/images/download (3).svg')}}"
-                      class="img-fluid"
-                      alt="Image 4"
-                    />
-                    <img
-                      src="{{  asset('front-assets/media/images/download (4).svg')}}"
-                      class="img-fluid"
-                      alt="Image 4"
-                    />
+                        <img
+                          src="{{ asset('front-assets/media/images/download (3).svg') }}"
+                          class="img-fluid"
+                          alt="Image 4"
+                        />
+                        <img
+                          src="{{ asset('front-assets/media/images/download (4).svg') }}"
+                          class="img-fluid"
+                          alt="Image 4"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
+                  >
+                    <div class="content py-5 last-section">
+                      <img
+                        src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
+                  >
+                    <div class="content py-5">
+                      <h2 class="text-light text-center">Our Location</h2>
+                      <h5 class="text-light text-center">HeadQuater</h5>
+                      <h6 class="text-light text-center">
+                        Stil-Plaza No.4537897 kdly
+                      </h6>
+                      <h6 class="text-center text-center">Istanbol</h6>
+                      <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" class="let-meet img-fluid" />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-              >
-                <div class="content py-5 last-section">
-                  <img
-                    src="{{  asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg')}}"
-                    class="img-fluid"
-                  />
+                <div class="row">
+                  <div class="col text-center">
+                    <p class="text-light">
+                      <span class="me-5">Privacy policy</span>
+                      <span>Term of use</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-              >
-                <div class="content py-5">
-                  <h2 class="text-light text-center">Our Location</h2>
-                  <h5 class="text-light text-center">HeadQuater</h5>
-                  <h6 class="text-light text-center">
-                    Stil-Plaza No.4537897 kdly
-                  </h6>
-                  <h6 class="text-center text-center">Istanbol</h6>
-                  <img src="{{  asset('front-assets/media/images/letsmeat.png')}}" class="let-meet img-fluid" />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col text-center">
-                <p class="text-light">
-                  <span class="me-5">Privacy policy</span>
-                  <span>Term of use</span>
+                <p class="text-light text-center m-0 pb-5">
+                Copyright © 2024 Meat Moot | Powered by Meat Moot
                 </p>
               </div>
-            </div>
-            <p class="text-light text-center m-0 pb-5">
-            Copyright © 2024 Meat Moot | Powered by Meat Moot
-            </p>
-          </div>
-        </div> -->
+            </div> -->
     </div>
 @endsection
 
 @push('scripts')
-
-<script src="{{  asset('front-assets/js/our-menu.js')}}"></script>
+    <script src="{{ asset('front-assets/js/our-menu.js') }}"></script>
 @endpush

@@ -42,9 +42,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('investors') }}">Investors</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('event-news') }}">Events & News</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('contact') }}">Contact</a>
                     </li>

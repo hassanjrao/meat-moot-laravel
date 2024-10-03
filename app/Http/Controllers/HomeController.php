@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MenuHighlight;
+use App\Models\OurMenu;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,11 +22,16 @@ class HomeController extends Controller
 
 
     public function menu(){
-        return view('front.menu');
+
+        $menuHighlights=MenuHighlight::latest()->get();
+
+        return view('front.menu',compact('menuHighlights'));
     }
 
     public function ourMenu(){
-        return view('front.our-menu');
+
+        $menus=OurMenu::latest()->get();
+        return view('front.our-menu',compact('menus'));
     }
 
     public function about(){

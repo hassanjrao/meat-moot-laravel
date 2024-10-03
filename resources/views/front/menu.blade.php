@@ -3,11 +3,11 @@
 @section('styles')
 
 
-<link rel="stylesheet" href="{{  asset('front-assets/css/menu.css')}}" />
+    <link rel="stylesheet" href="{{ asset('front-assets/css/menu.css') }}" />
 
 @endsection
 
-@section('page-title','Menu')
+@section('page-title', 'Menu')
 
 
 @section('content')
@@ -27,17 +27,6 @@
                 Every bite is a wholesome experience! You cannot resist the taste of
                 the <span class="font-weight-bold">smoked <br />flavors</span>.
             </h2>
-
-            <!-- Dropdown using <select> -->
-            {{-- <div class="mx-auto mb-1 mt-3">
-                <select class="form-select btn-location d-inline-block" aria-label="Choose a location">
-                    <option selected disabled>Choose a location</option>
-                    <!-- <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option> -->
-                </select>
-            </div> --}}
-            {{-- <div class="underline mx-auto"></div> --}}
         </div>
     </section>
 
@@ -46,163 +35,51 @@
             <h2 class="section-title text-center mb-5">Our Menu</h2>
             <div>
                 <!-- First row (Lamb Shoulder) -->
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-1">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-1.webp')}}" class="img-fluid" alt="Lamb Shoulder" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-2">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Lamb Shoulder</h5>
-                            <p class="item-description">
-                                When shoulder meat is this awesome, keep the seasoning vivid. Smoked authentic meat
-                                accordingly to a delicious recipe, seasoned with coarse salt and fleshly grounded black
-                                pepper.
-                                You can also add honey to make it palpable with extras served on the side in accordance with
-                                your freshly gourmet palate.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @php
+                    $i=1;
+                @endphp
+
+                @foreach ($menuHighlights as $ind => $menuHighlight)
+
+                    @php
+                        $order='order-1';
+                        $imgOrder='order-2';
 
 
 
-                <!-- Second row -->
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-lg-2">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-2.webp')}}" class="img-fluid" alt="Lamb Shoulder" />
-                        </div>
-                    </div>
-                    <div
-                        class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-lg-1">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Beef Brisket</h5>
-                            <p class="item-description">
-                                Savor the exquisite smoked brisket at Meat Moot, which is made from premium quality meat and
-                                served with a delectable blend of spicy sauce and garlic yogurt. Our chefs take great care
-                                in crafting this dish, skillfully highlighting the natural flavors of the meat and providing
-                                a truly delightful dining experience.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                        if($i % 2 == 0){
+                            $order='order-lg-2';
+                            $imgOrder='order-lg-1';
+                        }
 
-                <!-- Third row -->
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-lg-1">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-3.webp')}}" class="img-fluid" alt="Lamb Shoulder" />
-                        </div>
-                    </div>
-                    <div
-                        class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-lg-2">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Lamb Ribs</h5>
-                            <p class="item-description">
-                                When shoulder meat is this awesome, keep the seasoning vivid.
-                                Smoked authentic meat seasoned with coarse salt and freshly
-                                grounded meat...
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                        $i++;
 
-                <!-- Fourth row -->
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-lg-2">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-4.webp')}}" class="img-fluid" alt="Lamb Shoulder" />
-                        </div>
-                    </div>
-                    <div
-                        class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-lg-1">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Beef Ribs</h5>
-                            <p class="item-description">
-                                When shoulder meat is this awesome, keep the seasoning vivid.
-                                Smoked authentic meat seasoned with coarse salt and freshly
-                                grounded meat...
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Fifth row -->
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-lg-1">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-5.webp')}}" class="img-fluid image-fill"
-                                alt="Lamb Shoulder" />
-                        </div>
-                    </div>
-                    <div
-                        class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-lg-2">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Lamb Shank</h5>
-                            <p class="item-description">
-                                When shoulder meat is this awesome, keep the seasoning vivid.
-                                Smoked authentic meat seasoned with coarse salt and freshly
-                                grounded meat...
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    @endphp
 
-                <!-- Sixth row -->
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-lg-2">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-6.webp')}}" class="img-fluid" alt="Lamb Shoulder" />
+                    <div class="row">
+                        <div class="col-md-6 p-0 order-md-1 {{ $order }}">
+                            <div class="card-item">
+                                <img src="{{ $menuHighlight->image_url }}" class="img-fluid"
+                                    alt="Lamb Shoulder" />
+                            </div>
+                        </div>
+                        <div
+                            class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 {{ $imgOrder }}">
+                            <img src="{{ asset('front-assets/media/images/download (14).svg') }}"
+                                class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
+                            <div class="card-content">
+                                <h5 class="item-title text-center fw-normal">{{ $menuHighlight->title }}</h5>
+                                <p class="item-description">
+                                    {{ $menuHighlight->description }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div
-                        class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-lg-1">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Beef Shank</h5>
-                            <p class="item-description">
-                                When shoulder meat is this awesome, keep the seasoning vivid.
-                                Smoked authentic meat seasoned with coarse salt and freshly
-                                grounded meat...
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
-                <div class="row">
-                    <div class="col-md-6 p-0 order-md-1 order-lg-1">
-                        <div class="card-item">
-                            <img src="{{  asset('front-assets/media/images/menu/menu-item-5.webp')}}" class="img-fluid image-fill"
-                                alt="Lamb Shoulder" />
-                        </div>
-                    </div>
-                    <div
-                        class="col-md-6 d-flex align-content-center justify-content-center flex-column order-md-2 order-lg-2">
-                        <img src="{{  asset('front-assets/media/images/download (14).svg')}}"
-                            class="m-auto m-lg-0 menu-knife-image align-self-start" alt="" />
-                        <div class="card-content">
-                            <h5 class="item-title text-center fw-normal">Lamb Shank heeeeee</h5>
-                            <p class="item-description">
-                                When shoulder meat is this awesome, keep the seasoning vivid.
-                                Smoked authentic meat seasoned with coarse salt and freshly
-                                grounded meat...
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </section>
@@ -221,7 +98,7 @@
             Our Menu
         </button>
         <div class="letsmeat pb-5">
-            <img src="{{  asset('front-assets/media/images/letsmeat.png')}}" />
+            <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" />
         </div>
     </div>
 @endsection
