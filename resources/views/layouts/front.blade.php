@@ -31,22 +31,22 @@
             <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav gap-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link text-light {{ request()->is('/') ? ' active' : ''  }}" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('about') }}">About</a>
+                        <a class="nav-link text-light {{ request()->is('about') ? ' active' : ''  }}" href="{{ route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('menu') }}">Menu</a>
+                        <a class="nav-link text-light  {{ request()->is('menu') ||  request()->is('our-menu') ? ' active' : ''  }}" href="{{ route('menu') }}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('investors') }}">Investors</a>
+                        <a class="nav-link text-light {{ request()->is('investors') ? ' active' : ''  }}" href="{{ route('investors') }}">Investors</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('event-news') }}">Events & News</a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('contact') }}">Contact</a>
+                        <a class="nav-link text-light {{ request()->is('contact') ? ' active' : ''  }}" href="{{ route('contact') }}">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         {{-- <a class="nav-link dropdown-toggle text-light" href="#en.html" id="navbarDropdown"
@@ -135,6 +135,11 @@
 
     <script src="{{ asset('front-assets/js/script.js') }}"></script>
     <script src="{{ asset('front-assets/js/common.js') }}"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @include('sweetalert::alert')
+
 
     @stack('scripts')
 </body>

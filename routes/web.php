@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminContactUsRequestController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminExtraController;
 use App\Http\Controllers\AdminFullCourseMealController;
@@ -30,6 +31,8 @@ Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
 Route::get('/our-menu', [HomeController::class, 'ourMenu'])->name('our-menu');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/submit-request', [HomeController::class, 'submitRequest'])->name('contact.submit');
+
 
 Route::get('/investors', [HomeController::class, 'investors'])->name('investors');
 Route::get('/events-and-news', [HomeController::class, 'eventNews'])->name('event-news');
@@ -48,5 +51,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('full-course-meal',AdminFullCourseMealController::class);
 
     Route::resource('extras',AdminExtraController::class);
+    Route::resource('contact-us-requests',AdminContactUsRequestController::class)->only(['index','destroy']);
 
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactUsRequest;
 use App\Models\Extra;
 use App\Models\FullCourseMeal;
 use App\Models\MenuHighlight;
@@ -52,5 +53,32 @@ class HomeController extends Controller
 
     public function investors(){
         return view('front.investors');
+    }
+
+    public function submitRequest(Request $request){
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email'=>'required|email',
+            'mobile'=>'required|numeric',
+            'company'=>'nullable',
+            'country_city'=>'nullable',
+            'subject'=>'required',
+            'description'=>'required',
+        ]);
+
+
+        ContactUsRequest::create([
+            'first_name'=>$request->first_name,
+            'last_name'=>$request->last_name,
+            'email'=>$request->email,
+            'mobile'=>$request->mobile,
+            'company'=>$request->company,
+            'country_city'=>$request->country_city,
+            'subject'=>$request->subject,
+            'message'=>$request->description,
+        ]);
+
+        return redirect()->back()->withToastSuccess('Request submitted successfully, we will get back to you soon');
     }
 }
