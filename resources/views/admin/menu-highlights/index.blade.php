@@ -46,7 +46,7 @@
 
                         </thead>
 
-                        <tfuel>
+                        <tbody>
                             @foreach ($menuHighlights as $ind => $menuHighlight)
                                 <tr>
 
@@ -80,7 +80,7 @@
 
                                 </tr>
                             @endforeach
-                        </tfuel>
+                        </tbody>
 
                     </table>
 

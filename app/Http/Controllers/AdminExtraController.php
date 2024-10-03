@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Extra;
 use Illuminate\Http\Request;
 
 class AdminExtraController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $extras = Extra::latest()->get();
+
+        return view('admin.extras.index', compact('extras'));
     }
 
     /**
@@ -23,7 +21,9 @@ class AdminExtraController extends Controller
      */
     public function create()
     {
-        //
+        $extra=null;
+
+        return view('admin.extras.add_edit', compact('extra'));
     }
 
     /**
@@ -34,7 +34,17 @@ class AdminExtraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        Extra::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin.extras.index')->withToastSuccess('Added successfully');
     }
 
     /**
@@ -56,7 +66,9 @@ class AdminExtraController extends Controller
      */
     public function edit($id)
     {
-        //
+        $extra = Extra::findOrFail($id);
+
+        return view('admin.extras.add_edit', compact('extra'));
     }
 
     /**
@@ -68,7 +80,19 @@ class AdminExtraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $extra = Extra::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $extra->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin.extras.index')->withToastSuccess('Updated successfully');
     }
 
     /**
@@ -79,6 +103,8 @@ class AdminExtraController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Extra::findOrFail($id)->delete();
+
+        return back()->withToastSuccess('Deleted successfully');
     }
 }

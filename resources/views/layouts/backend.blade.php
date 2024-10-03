@@ -175,7 +175,7 @@
                         </li>
 
                         <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('admin/menu-highlights') ? ' active' : '' }}"
+                            <a class="nav-main-link{{ request()->is('admin/menu-highlights/*') ? ' active' : '' }}"
                                 href="{{ route('admin.menu-highlights.index') }}">
                                 <i class="nav-main-link-icon si si-cursor"></i>
                                 <span class="nav-main-link-name">Menu Highlights</span>
@@ -183,7 +183,7 @@
                         </li>
 
                         <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('admin/our-menu') ? ' active' : '' }}"
+                            <a class="nav-main-link{{ request()->is('admin/our-menu/*') ? ' active' : '' }}"
                                 href="{{ route('admin.our-menu.index') }}">
                                 <i class="nav-main-link-icon si si-cursor"></i>
                                 <span class="nav-main-link-name">Our Menu</span>
@@ -191,10 +191,19 @@
                         </li>
 
                         <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('admin/full-course-meal') ? ' active' : '' }}"
+                            <a class="nav-main-link{{ request()->is('admin/full-course-meal/*') ? ' active' : '' }}"
                                 href="{{ route('admin.full-course-meal.index') }}">
                                 <i class="nav-main-link-icon si si-cursor"></i>
                                 <span class="nav-main-link-name">Full Course Meal</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/extras/*') ? ' active' : '' }}"
+                                href="{{ route('admin.extras.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">Extras</span>
                             </a>
                         </li>
 

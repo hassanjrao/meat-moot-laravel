@@ -46,7 +46,7 @@
 
                         </thead>
 
-                        <tfuel>
+                        <tbody>
                             @foreach ($fullCourseMeals as $ind => $fullCourseMeal)
                                 <tr>
 
@@ -80,7 +80,7 @@
 
                                 </tr>
                             @endforeach
-                        </tfuel>
+                        </tbody>
 
                     </table>
 

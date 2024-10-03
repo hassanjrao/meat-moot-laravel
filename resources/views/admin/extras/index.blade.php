@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 
-@section('page-title', 'Our Menu')
+@section('page-title', 'Extras')
 @section('css_before')
     <!-- Page JS Plugins CSS -->
 
@@ -16,11 +16,11 @@
         <div class="block block-rounded">
             <div class="block-header block-header-default">
                 <h3 class="block-title">
-                    Menu
+                    Extras
                 </h3>
 
 
-                <a href="{{ route('admin.our-menu.create') }}" class="btn btn-primary">Add</a>
+                <a href="{{ route('admin.extras.create') }}" class="btn btn-primary">Add</a>
 
 
 
@@ -35,7 +35,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>Title</th>
-                                <th>Image</th>
                                 <th>Description</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
@@ -47,29 +46,26 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($menus as $ind => $menu)
+                            @foreach ($extras as $ind => $extra)
                                 <tr>
 
                                     <td>{{ $ind + 1 }}</td>
-                                    <td>{{ $menu->title }}</td>
-                                    <td>
-                                        <img src="{{ $menu->image_url }}" alt="" width="100px">
-                                    </td>
-                                    <td>{{ $menu->description }}</td>
+                                    <td>{{ $extra->title }}</td>
+                                    <td>{{ $extra->description }}</td>
 
-                                    <td>{{ $menu->created_at }}</td>
-                                    <td>{{ $menu->updated_at }}</td>
+                                    <td>{{ $extra->created_at }}</td>
+                                    <td>{{ $extra->updated_at }}</td>
 
                                     <td>
-                                        <a href="{{ route('admin.our-menu.edit', $menu->id) }}" class="btn btn-sm btn-primary"
+                                        <a href="{{ route('admin.extras.edit', $extra->id) }}" class="btn btn-sm btn-primary"
                                             data-toggle="tooltip" title="Edit">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
-                                        <form id="form-{{ $menu->id }}"
-                                            action="{{ route('admin.our-menu.destroy', $menu->id) }}" method="POST">
+                                        <form id="form-{{ $extra->id }}"
+                                            action="{{ route('admin.extras.destroy', $extra->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="button" onclick="confirmDelete({{ $menu->id }})" class="btn btn-sm btn-danger" data-toggle="tooltip"
+                                            <button type="button" onclick="confirmDelete({{ $extra->id }})" class="btn btn-sm btn-danger" data-toggle="tooltip"
                                                 title="Delete">
                                                 <i class="fa fa-trash"></i>
                                             </button>

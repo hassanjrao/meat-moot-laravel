@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Extra;
+use App\Models\FullCourseMeal;
 use App\Models\MenuHighlight;
 use App\Models\OurMenu;
 use Illuminate\Http\Request;
@@ -31,7 +33,9 @@ class HomeController extends Controller
     public function ourMenu(){
 
         $menus=OurMenu::latest()->get();
-        return view('front.our-menu',compact('menus'));
+        $fullCourseMeals=FullCourseMeal::all();
+        $extras=Extra::all();
+        return view('front.our-menu',compact('menus','fullCourseMeals','extras'));
     }
 
     public function about(){
