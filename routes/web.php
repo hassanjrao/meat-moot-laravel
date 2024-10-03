@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminFullCourseMealController;
 use App\Http\Controllers\AdminMenuHighlightController;
 use App\Http\Controllers\AdminOurMenuController;
 use App\Http\Controllers\AdminProfileController;
@@ -42,5 +43,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     Route::resource('menu-highlights', AdminMenuHighlightController::class);
     Route::resource('our-menu', AdminOurMenuController::class);
+
+    Route::resource('full-course-meal',AdminFullCourseMealController::class);
 
 });

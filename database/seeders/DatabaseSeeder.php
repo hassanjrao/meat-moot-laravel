@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             MenuHighlightSeeder::class,
             OurMenuSeeder::class,
+            FullCourseMealSeeder::class,
         ]);
     }
 }
