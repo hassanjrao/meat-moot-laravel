@@ -20,7 +20,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('front.home');
+        $menuHighlights=MenuHighlight::latest()->get();
+
+
+        $halfMenuHighlights=ceil($menuHighlights->count()/2);
+
+        $menuHighlightsFirst=$menuHighlights->take($halfMenuHighlights);
+        $menuHighlightsSecond=$menuHighlights->skip($halfMenuHighlights);
+
+        return view('front.home',compact('menuHighlightsFirst','menuHighlightsSecond'));
     }
 
 

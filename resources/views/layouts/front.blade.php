@@ -20,8 +20,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="mainNavbar">
         <div class="container-fluid align-items-center mx-auto justify-content-around">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.png') }}" alt="Logo"
-                    height="" class="ms-auto" />
+                <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.jpg') }}" alt="Logo"
+                    height="" class="ms-auto" style="width: 86px; height: 70px;" />
             </a>
             <button class="navbar-toggler" type="button" id="navbarToggle" aria-controls="navbarNav"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
                     <div class="content last-section">
-                        <img src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
+                        <img src="{{ asset('front-assets/media/images/letsmeet.jpg') }}"
                             class="img-fluid" />
                     </div>
                 </div>

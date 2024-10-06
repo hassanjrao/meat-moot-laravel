@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('page-title','Home')
+@section('page-title', 'Home')
 
 
 @section('content')
@@ -17,10 +17,14 @@
                 <a href="#" class="btn-location offset-2">Find Location</a>
             </div>
             <div class="social-icons d-flex align-items-center justify-content-center mt-5 gap-3 gap-md-4 gap-lg-5">
-                <a href="#"><img src="{{  asset('front-assets/media/images/download (8).svg')}}" class="" alt="" /></a>
-                <a href="#"><img src="{{  asset('front-assets/media/images/download (12).svg')}}" class="" alt="" /></a>
-                <a href="#"><img src="{{  asset('front-assets/media/images/download (3).svg')}}" class="" alt="" /></a>
-                <a href="#"><img src="{{  asset('front-assets/media/images/download (4).svg')}}" class="" alt="" /></a>
+                <a href="#"><img src="{{ asset('front-assets/media/images/download (8).svg') }}" class=""
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('front-assets/media/images/download (12).svg') }}" class=""
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('front-assets/media/images/download (3).svg') }}" class=""
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('front-assets/media/images/download (4).svg') }}" class=""
+                        alt="" /></a>
             </div>
         </div>
     </div>
@@ -31,12 +35,13 @@
             <!-- Image Section -->
             <div class="menu-image-container mb-4 position-relative">
                 <div class="image-card"></div>
-                <img src="{{  asset('front-assets/media/images/home-meatmoot-smoked-meat-.webp')}}" alt="Menu Image"
+                <img src="{{ asset('front-assets/media/images/home-meatmoot-smoked-meat-.webp') }}" alt="Menu Image"
                     class="menu-image-meat position-absolute" />
             </div>
             <!-- Text Section -->
             <div class="menu-content d-flex flex-column justify-content-start align-items-start">
-                <img src="{{  asset('front-assets/media/images/download (14).svg')}}" class="fork-image m-auto m-lg-0" alt="" />
+                <img src="{{ asset('front-assets/media/images/download (14).svg') }}" class="fork-image m-auto m-lg-0"
+                    alt="" />
                 <h2 class="menu-heading">Menu Concept</h2>
                 <h3 class="menu-subheading">The unique Taste</h3>
                 <p class="menu-description">
@@ -47,7 +52,8 @@
                 </p>
             </div>
             <div class="image-container mb-4 mb-lg-0">
-                <img src="{{  asset('front-assets/media/images/download (13).svg')}}" alt="Menu Image" class="knife-image" />
+                <img src="{{ asset('front-assets/media/images/download (13).svg') }}" alt="Menu Image"
+                    class="knife-image" />
             </div>
         </div>
     </section>
@@ -58,13 +64,15 @@
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6 d-flex flex-row-reverse">
                     <!-- Knife logo -->
-                    <img src="{{  asset('front-assets/media/images/download (7).svg')}}" alt="Meat Moot" class="testimonial-logo" />
+                    <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.jpg') }}" alt="Meat Moot"
+                        class="testimonial-logo" />
                 </div>
-                <div class="col-lg-6 ps-5 ps-lg-0">
+                <div class="col-lg-6 ps-5">
                     <div class="testimonial-content">
                         <!-- Quote -->
                         <div class="quote-icon"></div>
-                        <img src="{{  asset('front-assets/media/images/download (6).svg')}}" class="" alt="" />
+                        <img src="{{ asset('front-assets/media/images/download (6).svg') }}" class=""
+                            alt="" />
                     </div>
                     <!-- Divider -->
                     <div class="divider my-5"></div>
@@ -95,40 +103,44 @@
             <div class="d-flex flex-column flex-lg-row justify-content-center gap-">
                 <div class="d-flex flex-column w-100">
                     <!-- Menu Item 1 -->
-                    <div class="menu-item d-flex flex-column align-items-center justify-content-center">
-                        <!-- <div> -->
-                        <img src="{{  asset('front-assets/media/images/Lamb_shanks.png')}}" alt="Lamb Neck" class="img-fluid w-75" />
-                        <!-- </div> -->
-                        <p class="menu-item-name text-end w-75 pe-4">LAMB SHANKS</p>
-                    </div>
-                    <!-- Menu Item 2 -->
-                    <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{  asset('front-assets/media/images/Lamb_shoulder.png')}}" alt="Lamb Neck" class="img-fluid w-75" />
-                        <p class="menu-item-name text-end pe-4 w-75">LAMB SHOULDER</p>
-                    </div>
-                    <!-- Menu Item 3 -->
-                    <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{  asset('front-assets/media/images/Beef_briskets.png')}}" alt="Lamb Shoulder" class="img-fluid w-75" />
-                        <p class="menu-item-name text-end pe-4 w-75">BEEF BRISKET</p>
-                    </div>
+
+                    @foreach ($menuHighlightsFirst as $menu)
+                        <div class="menu-item d-flex flex-column align-items-center justify-content-center">
+                            <!-- <div> -->
+                            <img src="{{ $menu->image_url }}" alt="Lamb Neck" class="img-fluid w-75" />
+                            <!-- </div> -->
+                            <p class="menu-item-name text-end w-75 pe-4">
+                                {{ $menu->title }}
+                            </p>
+                        </div>
+                    @endforeach
+
                 </div>
                 <div class="d-flex flex-column w-100">
+
                     <div class="menu-knife-image d-flex align-items-center justify-content-center mb-5">
-                        <img src="{{  asset('front-assets/media/images/download.svg')}}" alt="" class="w-75 mx-auto" />
+                        <img src="{{ asset('front-assets/media/images/download.svg') }}" alt=""
+                            class="w-75 mx-auto" />
                     </div>
                     <!-- Menu Item 4 -->
-                    <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{  asset('front-assets/media/images/Lamb_Neck.png')}}" alt="Lamb Ribs" class="img-fluid w-75" />
-                        <p class="menu-item-name text-start ps-4 w-75">LAMB NECK</p>
-                    </div>
+
+                    @foreach ($menuHighlightsSecond as $menu)
+                        <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
+                            <img src="{{ $menu->image_url }}" alt="Lamb Ribs"
+                                class="img-fluid w-75" />
+                            <p class="menu-item-name text-start ps-4 w-75">{{ $menu->title }}</p>
+                        </div>
+                    @endforeach
                     <!-- Menu Item 5 -->
                     <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{  asset('front-assets/media/images/Lamb_ribs.png')}}" alt="Beef Brisket" class="img-fluid w-75" />
+                        <img src="{{ asset('front-assets/media/images/Lamb_ribs.png') }}" alt="Beef Brisket"
+                            class="img-fluid w-75" />
                         <p class="menu-item-name text-start ps-4 w-75">LAMB RIBS</p>
                     </div>
                     <!-- Menu Item 6 -->
                     <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{  asset('front-assets/media/images/Beef_ribs.png')}}" alt="Beef Ribs" class="img-fluid w-75" />
+                        <img src="{{ asset('front-assets/media/images/Beef_ribs.png') }}" alt="Beef Ribs"
+                            class="img-fluid w-75" />
                         <p class="menu-item-name text-start ps-4 w-75">BEEF RIBS</p>
                     </div>
                 </div>
@@ -154,7 +166,8 @@
         <div class="map-border mb-4"></div>
         <h2 class="map-title mb-5">LET'S MEAT HERE!</h2>
         <div class="map-container container position-relative mx-auto">
-            <img id="world-map" src="{{  asset('front-assets/media/images/Map.png')}}" alt="World Map" class="image-container" />
+            <img id="world-map" src="{{ asset('front-assets/media/images/Map.png') }}" alt="World Map"
+                class="image-container" />
             <div class="zoom-controls">
                 <button id="zoom-in" class="btn btn-outline-light mb-2">+</button><br />
                 <button id="zoom-out" class="btn btn-outline-light">-</button>
@@ -202,7 +215,8 @@
                 <div class="border-celebrations"></div>
                 <h1>Celebrities Favorite Meat Restaurant</h1>
                 <div>
-                    <img src="{{  asset('front-assets/media/images/download (6).svg')}}" class="" alt="" />
+                    <img src="{{ asset('front-assets/media/images/download (6).svg') }}" class=""
+                        alt="" />
                     <p>
                         Each of our meals has its own unique story that we want to share
                         with you.
@@ -214,26 +228,26 @@
             <!-- Gallery -->
             <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center">
                 <div class="d-flex align-items-center justify-content-center flex-column">
-                    <img src="{{  asset('front-assets/media/images/meat-moot-new-cairo-opening3-300x200.jpeg')}}"
+                    <img src="{{ asset('front-assets/media/images/meat-moot-new-cairo-opening3-300x200.jpeg') }}"
                         class="image-1-gallery rounded mb-4 img-fluid" alt="Boat on Calm Water" />
 
-                    <img src="{{  asset('front-assets/media/images/meat-moot-happy-customerss-300x200.webp')}}"
+                    <img src="{{ asset('front-assets/media/images/meat-moot-happy-customerss-300x200.webp') }}"
                         class="image-2-gallery rounded m-0 img-fluid" alt="Wintry Mountain Landscape" />
                 </div>
                 <div class="d-flex">
                     <div class="mb-4 mb-md-0 ms-4 p-0 mx-0 justify-content-center d-flex flex-column align-items-center">
-                        <img src="{{  asset('front-assets/media/images/meat-moot-happy-customers-5-218x300.webp')}}"
+                        <img src="{{ asset('front-assets/media/images/meat-moot-happy-customers-5-218x300.webp') }}"
                             class="image-3-gallery img-fluid rounded pt-4 m-0" alt="Mountains in the Clouds" />
 
-                        <img src="{{  asset('front-assets/media/images/meatmoot-egypt-smoked-meat-1-150x150.jpeg')}}"
+                        <img src="{{ asset('front-assets/media/images/meatmoot-egypt-smoked-meat-1-150x150.jpeg') }}"
                             class="image-4-gallery img-fluid rounded mt-5" alt="Boat on Calm Water" />
                     </div>
 
                     <div class="mb-4 mb-md-0 justify-content-end d-flex flex-column align-items-start">
-                        <img src="{{  asset('front-assets/media/images/meat-moot-happy-customers3-200x300.jpeg')}}" class="img-fluid rounded"
-                            alt="Waves at Sea" />
+                        <img src="{{ asset('front-assets/media/images/meat-moot-happy-customers3-200x300.jpeg') }}"
+                            class="img-fluid rounded" alt="Waves at Sea" />
 
-                        <img src="{{  asset('front-assets/media/images/meat-moot-happy-customers-300x200.jpeg')}}"
+                        <img src="{{ asset('front-assets/media/images/meat-moot-happy-customers-300x200.jpeg') }}"
                             class="img-fluid rounded mb-4 image-end" alt="Yosemite National Park" />
                     </div>
                 </div>
