@@ -24,6 +24,9 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('css/oneui.css') }}">
     <link rel="icon" href="{{ asset('media/fav.png') }}" type="image/gif" sizes="16x16">
 
+    <link rel="stylesheet" href="{{ asset('js/plugins/datatables-bs5/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/plugins/datatables-buttons-bs5/buttons.bootstrap5.min.css') }}">
+
 
     <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="{{ asset('css/themes/amethyst.css') }}"> -->

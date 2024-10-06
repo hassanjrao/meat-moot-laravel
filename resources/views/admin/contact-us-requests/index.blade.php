@@ -53,11 +53,16 @@
                                 <tr>
 
                                     <td>{{ $ind + 1 }}</td>
-                                    <td>{{ $request->title }}</td>
-                                    <td>{{ $request->description }}</td>
+                                    <td>{{ $request->first_name }}</td>
+                                    <td>{{ $request->last_name }}</td>
+                                    <td>{{ $request->email }}</td>
+                                    <td>{{ $request->mobile }}</td>
+                                    <td>{{ $request->company }}</td>
+                                    <td>{{ $request->country_city }}</td>
+                                    <td>{{ $request->subject }}</td>
+                                    <td>{{ $request->message }}</td>
 
                                     <td>{{ $request->created_at }}</td>
-                                    <td>{{ $request->updated_at }}</td>
 
                                     <td>
 
