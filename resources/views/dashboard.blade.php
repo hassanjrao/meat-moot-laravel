@@ -1,4 +1,5 @@
 @extends('layouts.backend')
+@section('page-title','Dashboard')
 
 @section('content')
     <!-- Hero -->
@@ -29,6 +30,6 @@
     <!-- END Hero -->
 
     <!-- Page Content -->
-  
+
     <!-- END Page Content -->
 @endsection
