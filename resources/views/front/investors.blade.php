@@ -1,10 +1,17 @@
 @extends('layouts.front')
 
 @section('styles')
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="{{ asset('front-assets/css/invertors.css') }}" />
 @endsection
 
-@section('page-title','Investors')
+@section('page-title', 'Investors')
+
+@php
+    $settings = \App\Models\Setting::first();
+@endphp
 
 
 @section('content')
@@ -31,130 +38,20 @@
         </div>
         <div class="mt-5">
             <div class="box">
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
+
+                @foreach ($faqs as $faq)
+                    <div class="question-container" style="cursor: pointer">
+                        <div class="question" onclick="toggleDiv(this)">
+                            <p class="fw-bold fs-5 pt-2">
+                                {{ $faq->question }}
+                            </p>
+                            <i class="fa-solid fa-plus fw-bold fs-4"></i>
+                        </div>
+                        <p class="answer fw-light fs-5 text-normal p-3 text-light">
+                            {{ $faq->answer }}
                         </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
                     </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Does Meat Moot's Resturants offer franchises or license the
-                            concept?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Meat Moot is currently offering franchise oppurtunities in
-                        international markets to qualified franchisees.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Are we the right fit for each other
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Meet Moot provides delivery services in many areas, ensuring
-                        timely and hot food delivery.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
-                <div class="question-container">
-                    <div class="question" onclick="toggleDiv(this)">
-                        <p class="fw-bold fs-5 pt-2">
-                            Where is Meet Moot restaurant's headquarter?
-                        </p>
-                        <i class="fa-solid fa-plus fw-bold fs-4"></i>
-                    </div>
-                    <p class="answer fw-light fs-5 text-normal p-3 text-light">
-                        Sitki Bey Plaza No:82 k:7 34736 Kadikoy - ISTANBUL, TURKEY.
-                    </p>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -331,7 +228,7 @@
             <button class="mb-3">APPLY FOR FRANCHISE</button>
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 pt-3">
                 <p>For More Information Reach Us On WhatsApp</p>
-                <a href="https://wa.me/your_whatsapp_number" class="whatsapp-link">
+                <a href="{{ $settings->whatsapp }}" class="whatsapp-link" target="_blank">
                     <img src="{{ asset('front-assets/media/images/icons8-whatsapp-480 (1).png') }}" alt="WhatsApp"
                         class="whatsapp-icon mb-3" />
                 </a>

@@ -17,14 +17,29 @@
                 <a href="#" class="btn-location offset-2">Find Location</a>
             </div>
             <div class="social-icons d-flex align-items-center justify-content-center mt-5 gap-3 gap-md-4 gap-lg-5">
-                <a href="#"><img src="{{ asset('front-assets/media/images/download (8).svg') }}" class=""
-                        alt="" /></a>
-                <a href="#"><img src="{{ asset('front-assets/media/images/download (12).svg') }}" class=""
-                        alt="" /></a>
-                <a href="#"><img src="{{ asset('front-assets/media/images/download (3).svg') }}" class=""
-                        alt="" /></a>
-                <a href="#"><img src="{{ asset('front-assets/media/images/download (4).svg') }}" class=""
-                        alt="" /></a>
+
+                @if ($settings->instagram)
+                    <a target='_blank' href="{{ $settings->instagram }}">
+                        <img src="{{ asset('front-assets/media/images/download (8).svg') }}" class=""
+                            alt="" />
+                    </a>
+                @endif
+                @if ($settings->facebook)
+                    <a target='_blank' href="{{ $settings->facebook }}">
+                        <img src="{{ asset('front-assets/media/images/download (12).svg') }}" class=""
+                            alt="" />
+                    </a>
+                @endif
+                @if ($settings->tripadvisor)
+                    <a target='_blank' href="{{ $settings->tripadvisor }}">
+                        <img src="{{ asset('front-assets/media/images/download (3).svg') }}" class=""
+                            alt="" /></a>
+                @endif
+                @if ($settings->tiktok)
+                    <a target='_blank' href="{{ $settings->tiktok }}">
+                        <img src="{{ asset('front-assets/media/images/download (4).svg') }}" class=""
+                            alt="" /></a>
+                @endif
             </div>
         </div>
     </div>
@@ -126,8 +141,7 @@
 
                     @foreach ($menuHighlightsSecond as $menu)
                         <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                            <img src="{{ $menu->image_url }}" alt="Lamb Ribs"
-                                class="img-fluid w-75" />
+                            <img src="{{ $menu->image_url }}" alt="Lamb Ribs" class="img-fluid w-75" />
                             <p class="menu-item-name text-start ps-4 w-75">{{ $menu->title }}</p>
                         </div>
                     @endforeach

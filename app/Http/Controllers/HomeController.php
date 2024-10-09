@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactUsRequest;
 use App\Models\Extra;
+use App\Models\FAQ;
 use App\Models\FullCourseMeal;
 use App\Models\MenuHighlight;
 use App\Models\OurMenu;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,7 +30,9 @@ class HomeController extends Controller
         $menuHighlightsFirst=$menuHighlights->take($halfMenuHighlights);
         $menuHighlightsSecond=$menuHighlights->skip($halfMenuHighlights);
 
-        return view('front.home',compact('menuHighlightsFirst','menuHighlightsSecond'));
+        $settings=Setting::first();
+
+        return view('front.home',compact('menuHighlightsFirst','menuHighlightsSecond','settings'));
     }
 
 
@@ -60,7 +64,9 @@ class HomeController extends Controller
     }
 
     public function investors(){
-        return view('front.investors');
+
+        $faqs=FAQ::all();
+        return view('front.investors',compact('faqs'));
     }
 
     public function submitRequest(Request $request){

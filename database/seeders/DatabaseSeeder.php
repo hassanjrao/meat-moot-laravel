@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             OurMenuSeeder::class,
             FullCourseMealSeeder::class,
             ExtraSeeder::class,
+            SettingSeeder::class,
+            FAQSeeder::class,
         ]);
     }
 }

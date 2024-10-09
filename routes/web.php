@@ -3,10 +3,12 @@
 use App\Http\Controllers\AdminContactUsRequestController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminExtraController;
+use App\Http\Controllers\AdminFaqController;
 use App\Http\Controllers\AdminFullCourseMealController;
 use App\Http\Controllers\AdminMenuHighlightController;
 use App\Http\Controllers\AdminOurMenuController;
 use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -52,5 +54,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     Route::resource('extras',AdminExtraController::class);
     Route::resource('contact-us-requests',AdminContactUsRequestController::class)->only(['index','destroy']);
+
+    Route::resource('settings',AdminSettingController::class)->only(['index','update']);
+
+    Route::resource('faqs', AdminFaqController::class);
 
 });
