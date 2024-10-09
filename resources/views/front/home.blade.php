@@ -14,7 +14,7 @@
                 </h1>
             </div>
             <div class="row mt-4">
-                <a href="#" class="btn-location offset-2">Find Location</a>
+                <a href="{{ route('contact') }}" class="btn-location offset-2">Find Location</a>
             </div>
             <div class="social-icons d-flex align-items-center justify-content-center mt-5 gap-3 gap-md-4 gap-lg-5">
 
@@ -188,7 +188,7 @@
             </div>
         </div>
         <p class="map-paragraph">
-            Find the nearest Meat Moot Restaurant and join us for lunch or dinner
+            Find the nearest {{ config('app.name') }} and join us for lunch or dinner
             today!
         </p>
     </section>

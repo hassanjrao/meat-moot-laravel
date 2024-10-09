@@ -36,7 +36,7 @@
                             </p>
                             <p class="text-light">
                                 We are headquartered in <strong>Istanbul, Turkey</strong>. At
-                                <strong>Meat Moot Restaurant</strong>, you will sit at a
+                                <strong>{{ config('app.name') }}</strong>, you will sit at a
                                 king’s banquet, you will be presented with a feast of
                                 garnished <strong>meat</strong> cooked following world-class
                                 recipes that will always leave you wanting more. Traditional

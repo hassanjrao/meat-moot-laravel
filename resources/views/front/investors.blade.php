@@ -56,39 +56,6 @@
         </div>
     </div>
 
-    <!-- Branches -->
-    <div class="branches">
-        <div class="branches-section position-relative">
-            <div class="branches-deatils text-light p-5">
-                <div>
-                    <h5 class="fw-light">WITH OVER 39 BRANCHES</h5>
-                    <h2>WE'RE ON THE MOVE AND GETTING IT RIGHT!</h2>
-                    <p class="mt-">
-                        We want to talk to you if tou are a growth minded entrepreneur
-                    </p>
-                    <p class="mt-4">
-                        While it is not required, it is always a plus if you have prior
-                        franchising experience
-                    </p>
-                    <div class="d-flex gap-lg-3 mt-5">
-                        <i class="fa-solid fa-circle mt-1"></i>
-                        <p>Multi-unit franchising</p>
-                    </div>
-                    <div class="d-flex gap-lg-3">
-                        <i class="fa-solid fa-circle mt-1"></i>
-                        <p>
-                            5-10 years of multi-unit management experience, in hospitality
-                            and/or food retail services
-                        </p>
-                    </div>
-                </div>
-                <button class="view-more-btn p-3 mt-4">
-                    VIEW ALL OUR EVENTS
-                    <i class="fa-solid fa-chevron-right ms-3 text-light"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- franchise -->
     <div class="franchise-process text-center">

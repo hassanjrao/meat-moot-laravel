@@ -69,6 +69,10 @@ class HomeController extends Controller
         return view('front.investors',compact('faqs'));
     }
 
+    public function franchise(){
+        return view('front.franchise');
+    }
+
     public function submitRequest(Request $request){
         $request->validate([
             'first_name' => 'required',

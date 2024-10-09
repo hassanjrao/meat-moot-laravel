@@ -13,7 +13,7 @@
     <div class="about-image">
         <div class="black">
             <div class="meatmoot-h">
-                <h1 class="heading pt-5 mt-5">MEAT MOOT RESTAURANT</h1>
+                <h1 class="heading pt-5 mt-5">{{ config('app.name') }}</h1>
                 <h2 class="text-center menu py-3">MENU</h2>
                 <div class="heading-hr"></div>
                 <h4 class="text-center country m-3 py-3">Al-hasan Saudia Arabia</h4>

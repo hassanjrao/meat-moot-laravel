@@ -38,16 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav-link");
 
   // Check if there is a saved active link in localStorage
-  const activeLink = localStorage.getItem("activeLink");
+//   const activeLink = localStorage.getItem("activeLink");
 
   // If an active link is saved, apply the active class
-  if (activeLink) {
-    navLinks.forEach((link) => {
-      if (link.href === activeLink) {
-        link.classList.add("active");
-      }
-    });
-  }
+//   if (activeLink) {
+//     navLinks.forEach((link) => {
+//       if (link.href === activeLink) {
+//         link.classList.add("active");
+//       }
+//     });
+//   }
 
   // Add click event to all nav links
   navLinks.forEach((link) => {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
 
       // Save the active link in localStorage
-      localStorage.setItem("activeLink", this.href);
+    //   localStorage.setItem("activeLink", this.href);
     });
   });
 });
@@ -122,16 +122,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav-link");
 
   // Check if there is a saved active link in localStorage
-  const activeLink = localStorage.getItem("activeLink");
+//   const activeLink = localStorage.getItem("activeLink");
 
-  // If an active link is saved, apply the active class
-  if (activeLink) {
-    navLinks.forEach((link) => {
-      if (link.href === activeLink) {
-        link.classList.add("active");
-      }
-    });
-  }
+//   // If an active link is saved, apply the active class
+//   if (activeLink) {
+//     navLinks.forEach((link) => {
+//       if (link.href === activeLink) {
+//         link.classList.add("active");
+//       }
+//     });
+//   }
 
   // Add click event to all nav links
   navLinks.forEach((link) => {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
 
       // Save the active link in localStorage
-      localStorage.setItem("activeLink", this.href);
+    //   localStorage.setItem("activeLink", this.href);
     });
   });
 });

@@ -35,6 +35,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/submit-request', [HomeController::class, 'submitRequest'])->name('contact.submit');
 
+Route::get('/franchise', [HomeController::class, 'franchise'])->name('franchise');
 
 Route::get('/investors', [HomeController::class, 'investors'])->name('investors');
 Route::get('/events-and-news', [HomeController::class, 'eventNews'])->name('event-news');

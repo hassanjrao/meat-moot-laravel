@@ -13,7 +13,7 @@
         <div class="black">
             <div class="heading d-flex flex-column align-content-between justify-content-center mt-5 pt-5">
                 <h1>Get In Touch</h1>
-                <p class="">CONTACT MEAT MOOT RESTAURANT</p>
+                <p class="">CONTACT {{ config('app.name') }}</p>
             </div>
         </div>
     </div>
