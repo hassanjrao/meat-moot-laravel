@@ -1,10 +1,19 @@
 @extends('layouts.front')
 
 @section('styles')
-<link rel="stylesheet" href="{{  asset('front-assets/css/about.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="{{ asset('front-assets/css/about.css') }}" />
 @endsection
 
-@section('page-title','About Us')
+@php
+    $settings = \App\Models\Setting::first();
+@endphp
+
+@section('page-title', 'About Us')
 
 @section('content')
     <!-- Main-section -->
@@ -46,10 +55,28 @@
                             </p>
                         </div>
                         <div class="icons">
-                            <i class="fa-brands fa-instagram text-light me-2"></i>
-                            <i class="fa-brands fa-facebook-f text-light me-2"></i>
-                            <i class="fa-brands fa-github-alt text-light"></i>
-                            <i class="fa-brands fa-tiktok text-light"></i>
+                            @if ($settings->instagram)
+                                <a target='_blank' href="{{ $settings->instagram }}">
+                                    <img src="{{ asset('front-assets/media/images/download (8).svg') }}" class=""
+                                        alt="" />
+                                </a>
+                            @endif
+                            @if ($settings->facebook)
+                                <a target='_blank' href="{{ $settings->facebook }}">
+                                    <img src="{{ asset('front-assets/media/images/download (12).svg') }}" class=""
+                                        alt="" />
+                                </a>
+                            @endif
+                            @if ($settings->tripadvisor)
+                                <a target='_blank' href="{{ $settings->tripadvisor }}">
+                                    <img src="{{ asset('front-assets/media/images/download (3).svg') }}" class=""
+                                        alt="" /></a>
+                            @endif
+                            @if ($settings->tiktok)
+                                <a target='_blank' href="{{ $settings->tiktok }}">
+                                    <img src="{{ asset('front-assets/media/images/download (4).svg') }}" class=""
+                                        alt="" /></a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -87,7 +114,7 @@
             {{-- <button class="btn btn-transparent">FIND CLOSEST LOCATION</button> --}}
         </div>
         <!--
-                  /*five column with one row -->
+                      /*five column with one row -->
         <div>
             <div class="d-flex flex-wrap justify-content-between pt-5">
                 <div class="box">
@@ -150,7 +177,7 @@
             </div>
         </div>
         <!--
-                Recommeded By -->
+                    Recommeded By -->
 
         <div class="container-fluid last-section pb-5">
             <h1 class="text-center p-5 recomded-heading">Recommended By</h1>
