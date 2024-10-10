@@ -151,7 +151,7 @@
         <div>
             <h1 class="heading pt-5">To Know More About Us</h1>
             <div class="d-flex justify-content-center align-content-center p-5">
-                <button class="orange-button text-dark">Visit Our Website</button>
+                <button onclick="visitWeb()" class="orange-button text-dark">Visit Our Website</button>
             </div>
 
             <div class="letsmeat pb-5 d-flex justify-content-center align-content-center">
@@ -308,4 +308,10 @@
 
 @push('scripts')
     <script src="{{ asset('front-assets/js/our-menu.js') }}"></script>
+
+    <script>
+        function visitWeb() {
+            window.location.href = "{{ route('home') }}";
+        }
+    </script>
 @endpush
