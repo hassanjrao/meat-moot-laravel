@@ -81,17 +81,7 @@
                 great smoked meat to the market and combining casual dining with great
                 and fast service.
             </p>
-            <h1 class="p-5">Branches</h1>
-            <p class="text-light container">
-                Istanbul - Turkey | Cairo - Egypt | Amman - Jordan | Doha - Qatar |
-                Kuwait City - Kuwait | Dubai - United Arab Emirates | Erbil - Iraq |
-                Chicago - USA | Manama - Bahrain | Michigan - United States | El Sahel
-                El Shamally - Egypt | Ramallah - Palestine | Buraydah - Saudi Arabia |
-                Riyadh - Saudi Arabia | Algiers - Algeria | Irbid - Jordan | Abu Dhabi
-                - UAE | Daboqu - Jordan | Benghazi - Libya | Trabzon - Turkey | Muscat
-                - Oman | Zarqa - Jordan | New Jersey - USA | Tabuk - Saudi Arabia |
-                Miami - USA | Al Ahsa - Saudi Arabia
-            </p>
+            
         </div>
         <div class="container text-center mt-5">
             <button class="btn btn-transparent">FIND CLOSEST LOCATION</button>
