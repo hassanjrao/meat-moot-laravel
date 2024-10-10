@@ -81,10 +81,10 @@
                 great smoked meat to the market and combining casual dining with great
                 and fast service.
             </p>
-            
+
         </div>
         <div class="container text-center mt-5">
-            <button class="btn btn-transparent">FIND CLOSEST LOCATION</button>
+            {{-- <button class="btn btn-transparent">FIND CLOSEST LOCATION</button> --}}
         </div>
         <!--
                   /*five column with one row -->
