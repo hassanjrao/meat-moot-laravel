@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminContactUsRequestController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminExtraController;
 use App\Http\Controllers\AdminFaqController;
+use App\Http\Controllers\AdminFranchiseRequestController;
 use App\Http\Controllers\AdminFullCourseMealController;
 use App\Http\Controllers\AdminMenuHighlightController;
 use App\Http\Controllers\AdminOurMenuController;
@@ -60,5 +61,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('settings',AdminSettingController::class)->only(['index','update']);
 
     Route::resource('faqs', AdminFaqController::class);
+
+    Route::resource('franchise-requests', AdminFranchiseRequestController::class)->only(['index','destroy']);
 
 });

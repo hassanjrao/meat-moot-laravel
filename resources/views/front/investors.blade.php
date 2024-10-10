@@ -192,7 +192,7 @@
                 <h3 class="">JOIN OUR GROWING FRANCHISE NETWORK</h3>
             </div>
             <img src="{{ asset('front-assets/media/images/download.svg') }}" alt="" class="w-25" />
-            <button class="mb-3">APPLY FOR FRANCHISE</button>
+            <button onclick="applyForFranchise()" class="mb-3">APPLY FOR FRANCHISE</button>
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 pt-3">
                 <p>For More Information Reach Us On WhatsApp</p>
                 <a href="{{ $settings->whatsapp }}" class="whatsapp-link" target="_blank">
@@ -206,4 +206,10 @@
 
 @push('scripts')
     <script src="{{ asset('front-assets/js/investors.js') }}"></script>
+
+    <script>
+        function applyForFranchise() {
+            window.location.href = "{{ route('franchise') }}";
+        }
+    </script>
 @endpush
