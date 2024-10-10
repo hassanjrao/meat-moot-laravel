@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         ],[
             'name' => 'Admin',
             'password' => bcrypt('password'),
-            'email'=> 'admin@m.com'
+            'email'=> 'info@lambofood.com'
         ]);
     }
 }
