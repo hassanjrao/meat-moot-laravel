@@ -270,3 +270,8 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+
+<script src="{{ asset('front-assets/js/script.js') }}"></script>
+@endpush

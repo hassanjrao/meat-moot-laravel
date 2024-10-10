@@ -1,145 +1,145 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-  const heroSection = document.querySelector(".hero-section");
+    const heroSection = document.querySelector(".hero-section");
 
-  // Array of background images
-  const images = [
-    "/front-assets/media/images/BRISKET-1-scaled-e1673617952250.webp",
-    // "/front-assets/media/images/meat-moot-happy-customerss.webp",
-    "/front-assets/media/images/Lamb-Ribs-meat-moot-2-2048x1638.webp",
-    "/front-assets/media/images/LAMB-SHANK-meat-moot-smokingmeat-1-scaled-e1673617386290.webp",
-    "/front-assets/media/images/LAMB-SHOULDER-MEAT-MOOT-2-2048x1638.webp",
-  ];
+    // Array of background images
+    const images = [
+        "/front-assets/media/images/BRISKET-1-scaled-e1673617952250.webp",
+        // "/front-assets/media/images/meat-moot-happy-customerss.webp",
+        "/front-assets/media/images/Lamb-Ribs-meat-moot-2-2048x1638.webp",
+        "/front-assets/media/images/LAMB-SHANK-meat-moot-smokingmeat-1-scaled-e1673617386290.webp",
+        "/front-assets/media/images/LAMB-SHOULDER-MEAT-MOOT-2-2048x1638.webp",
+    ];
 
-  let currentImageIndex = 0;
+    let currentImageIndex = 0;
 
-  // Function to change background image with only zoom-in animation
-  function changeBackgroundImage() {
-    // Apply the new image
-    currentImageIndex = (currentImageIndex + 1) % images.length; // Loop through the images
-    heroSection.style.backgroundImage = `url(${images[currentImageIndex]})`;
+    // Function to change background image with only zoom-in animation
+    function changeBackgroundImage() {
+        // Apply the new image
+        currentImageIndex = (currentImageIndex + 1) % images.length; // Loop through the images
+        heroSection.style.backgroundImage = `url(${images[currentImageIndex]})`;
 
-    // Add the fade-in (zoom-in) class for the new image
-    heroSection.classList.add("zoom-in");
+        // Add the fade-in (zoom-in) class for the new image
+        heroSection.classList.add("zoom-in");
 
-    // Remove the fade-in class after the zoom-in animation finishes
-    setTimeout(() => {
-      heroSection.classList.remove("zoom-in");
-    }, 4000); // Matches the zoom-in duration
-  }
+        // Remove the fade-in class after the zoom-in animation finishes
+        setTimeout(() => {
+            heroSection.classList.remove("zoom-in");
+        }, 4000); // Matches the zoom-in duration
+    }
 
-  // Initial image zoom-in on load
-  changeBackgroundImage();
+    // Initial image zoom-in on load
+    changeBackgroundImage();
 
-  // Change background every 4 seconds (2 seconds zoom-in, then automatic change)
-  setInterval(changeBackgroundImage, 4100);
+    // Change background every 4 seconds (2 seconds zoom-in, then automatic change)
+    setInterval(changeBackgroundImage, 4100);
 });
 
 // Testimonial animation on scroll
 document.addEventListener("DOMContentLoaded", function () {
-  const testimonialQuote = document.querySelector(".testimonial-quote");
-  const testimonialLogo = document.querySelector(".testimonial-logo");
+    const testimonialQuote = document.querySelector(".testimonial-quote");
+    const testimonialLogo = document.querySelector(".testimonial-logo");
 
-  const options = {
-    root: null, // viewport is the default root
-    rootMargin: "0px",
-    threshold: 0.5, // Trigger when 50% of the element is visible
-  };
+    const options = {
+        root: null, // viewport is the default root
+        rootMargin: "0px",
+        threshold: 0.5, // Trigger when 50% of the element is visible
+    };
 
-  // Callback for IntersectionObserver
-  const handleIntersection = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains("testimonial-quote")) {
-          entry.target.classList.add("fade-in-text"); // Add fade-in class for text
-        } else if (entry.target.classList.contains("testimonial-logo")) {
-          entry.target.classList.add("fade-in-image"); // Add fade-in class for logo
-        }
-        observer.unobserve(entry.target); // Stop observing after animation triggers
-      }
-    });
-  };
+    // Callback for IntersectionObserver
+    const handleIntersection = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains("testimonial-quote")) {
+                    entry.target.classList.add("fade-in-text"); // Add fade-in class for text
+                } else if (entry.target.classList.contains("testimonial-logo")) {
+                    entry.target.classList.add("fade-in-image"); // Add fade-in class for logo
+                }
+                observer.unobserve(entry.target); // Stop observing after animation triggers
+            }
+        });
+    };
 
-  // Create the IntersectionObserver
-  const observer = new IntersectionObserver(handleIntersection, options);
+    // Create the IntersectionObserver
+    const observer = new IntersectionObserver(handleIntersection, options);
 
-  // Observe both the quote and the logo for scroll animations
-  observer.observe(testimonialQuote);
-  observer.observe(testimonialLogo);
+    // Observe both the quote and the logo for scroll animations
+    observer.observe(testimonialQuote);
+    observer.observe(testimonialLogo);
 });
 
 // Section INfo
 document.querySelector(".btn").addEventListener("click", function (e) {
-  e.preventDefault();
-  document.querySelector("#connect").scrollIntoView({
-    behavior: "smooth",
-  });
+    e.preventDefault();
+    document.querySelector("#connect").scrollIntoView({
+        behavior: "smooth",
+    });
 });
 
 // Rating Scroll Section
 document.addEventListener("DOMContentLoaded", function () {
-  const statsSections = document.querySelectorAll(".stats-section h1");
-  let hasAnimated = false;
+    const statsSections = document.querySelectorAll(".stats-section h1");
+    let hasAnimated = false;
 
-  function animateNumber(element, start, end, duration) {
-    let startTime = null;
+    function animateNumber(element, start, end, duration) {
+        let startTime = null;
 
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const currentNumber = progress * (end - start) + start;
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const currentNumber = progress * (end - start) + start;
 
-      element.textContent = formatNumber(currentNumber, end);
+            element.textContent = formatNumber(currentNumber, end);
 
-      if (progress < 1) {
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        }
+
         window.requestAnimationFrame(step);
-      }
     }
 
-    window.requestAnimationFrame(step);
-  }
-
-  function formatNumber(number, end) {
-    if (end % 1 !== 0) {
-      return number.toFixed(1);
-    } else {
-      return Math.floor(number).toLocaleString();
+    function formatNumber(number, end) {
+        if (end % 1 !== 0) {
+            return number.toFixed(1);
+        } else {
+            return Math.floor(number).toLocaleString();
+        }
     }
-  }
 
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0; // Adjusted for more accuracy
-  }
-
-  // Function to trigger animation
-  function triggerAnimation() {
-    if (!hasAnimated) {
-      statsSections.forEach((section) => {
-        const targetNumber = parseFloat(section.getAttribute("data-number"));
-        animateNumber(section, 0, targetNumber, 2000);
-      });
-      hasAnimated = true;
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0; // Adjusted for more accuracy
     }
-  }
 
-  // Initial check to trigger animation on page load if in view
-  if (isInViewport(document.querySelector(".section-review"))) {
-    triggerAnimation();
-  }
+    // Function to trigger animation
+    function triggerAnimation() {
+        if (!hasAnimated) {
+            statsSections.forEach((section) => {
+                const targetNumber = parseFloat(section.getAttribute("data-number"));
+                animateNumber(section, 0, targetNumber, 2000);
+            });
+            hasAnimated = true;
+        }
+    }
 
-  // Use IntersectionObserver for better performance
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+    // Initial check to trigger animation on page load if in view
+    if (isInViewport(document.querySelector(".section-review"))) {
         triggerAnimation();
-        observer.unobserve(entry.target); // Stop observing after the animation
-      }
-    });
-  });
+    }
 
-  // Observe the review section
-  observer.observe(document.querySelector(".section-review"));
+    // Use IntersectionObserver for better performance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                triggerAnimation();
+                observer.unobserve(entry.target); // Stop observing after the animation
+            }
+        });
+    });
+
+    // Observe the review section
+    observer.observe(document.querySelector(".section-review"));
 });
 
 // document.addEventListener("DOMContentLoaded", function () {
@@ -211,50 +211,56 @@ const map = document.getElementById("world-map");
 const zoomInButton = document.getElementById("zoom-in");
 const zoomOutButton = document.getElementById("zoom-out");
 
-zoomInButton.addEventListener("click", function () {
-  if (zoomLevel < 2) {
-    zoomLevel += 0.1;
-    map.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
-    map.style.transformOrigin = "center";
-  }
-});
+if (zoomInButton) {
+    zoomInButton.addEventListener("click", function () {
+        if (zoomLevel < 2) {
+            zoomLevel += 0.1;
+            map.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+            map.style.transformOrigin = "center";
+        }
+    });
+}
 
-zoomOutButton.addEventListener("click", function () {
-  if (zoomLevel > 1) {
-    zoomLevel -= 0.1;
-    map.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
-    map.style.transformOrigin = "center";
-  }
-});
+if (zoomOutButton) {
+    zoomOutButton.addEventListener("click", function () {
+        if (zoomLevel > 1) {
+            zoomLevel -= 0.1;
+            map.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+            map.style.transformOrigin = "center";
+        }
+    });
 
-// Start panning on mouse down
-map.addEventListener("mousedown", function (event) {
-  isPanning = true;
-  startX = event.clientX - translateX;
-  startY = event.clientY - translateY;
-  map.style.cursor = "grabbing";
-});
+}
+if (map) {
+    // Start panning on mouse down
+    map.addEventListener("mousedown", function (event) {
+        isPanning = true;
+        startX = event.clientX - translateX;
+        startY = event.clientY - translateY;
+        map.style.cursor = "grabbing";
+    });
 
-// Pan the image while moving the mouse
-map.addEventListener("mousemove", function (event) {
-  if (isPanning) {
-    translateX = event.clientX - startX;
-    translateY = event.clientY - startY;
-    map.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
-  }
-});
+    // Pan the image while moving the mouse
+    map.addEventListener("mousemove", function (event) {
+        if (isPanning) {
+            translateX = event.clientX - startX;
+            translateY = event.clientY - startY;
+            map.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+        }
+    });
 
-// Stop panning when the mouse button is released
-map.addEventListener("mouseup", function () {
-  isPanning = false;
-  map.style.cursor = "grab";
-});
+    // Stop panning when the mouse button is released
+    map.addEventListener("mouseup", function () {
+        isPanning = false;
+        map.style.cursor = "grab";
+    });
 
-// Stop panning if the mouse leaves the image area
-map.addEventListener("mouseleave", function () {
-  isPanning = false;
-  map.style.cursor = "grab";
-});
+    // Stop panning if the mouse leaves the image area
+    map.addEventListener("mouseleave", function () {
+        isPanning = false;
+        map.style.cursor = "grab";
+    });
+}
 
 // animation zoom in map picture
 const mapContainer = document.querySelector(".map-container");
@@ -262,25 +268,25 @@ const mapContainer = document.querySelector(".map-container");
 
 // Function to check if the element is in the viewport
 function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
 
 // Add a scroll event listener to trigger animation when the map is in the viewport
 window.addEventListener("scroll", function () {
-  if (isInViewport(mapContainer)) {
-    mapContainer.classList.add("visible");
-  }
+    if (isInViewport(mapContainer)) {
+        mapContainer.classList.add("visible");
+    }
 });
 
 const container = document.querySelector("#bootstrap-image-gallery");
 window.lightGallery(container, {
-  selector: ".lg-item",
-  plugins: [lgZoom, lgThumbnail],
+    selector: ".lg-item",
+    plugins: [lgZoom, lgThumbnail],
 });

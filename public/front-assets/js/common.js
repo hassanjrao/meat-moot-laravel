@@ -12,14 +12,18 @@ document.getElementById("navbarToggle").addEventListener("click", function () {
   var navbar = document.getElementById("navbarNav");
   var isExpanded = this.getAttribute("aria-expanded") === "true";
 
+  console.log('sssssssss',isExpanded);
+
   // Toggle aria-expanded attribute
-  this.setAttribute("aria-expanded", !isExpanded);
 
   // Show or hide the navbar collapse
   if (!isExpanded) {
+    console.log('as')
     navbar.classList.add("show");
+  this.setAttribute("aria-expanded", "true");
   } else {
     navbar.classList.remove("show");
+    this.setAttribute("aria-expanded", "false");
   }
 });
 

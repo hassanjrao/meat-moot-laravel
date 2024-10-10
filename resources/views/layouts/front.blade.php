@@ -163,7 +163,6 @@
     </div>
     <script src="{{ asset('front-assets/vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js') }}"></script>
 
-    <script src="{{ asset('front-assets/js/script.js') }}"></script>
     <script src="{{ asset('front-assets/js/common.js') }}"></script>
 
 
