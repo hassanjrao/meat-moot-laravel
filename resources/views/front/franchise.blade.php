@@ -23,7 +23,7 @@
 
             <div class="col-lg-8">
 
-                <form action="{{ route('contact.submit') }}" method="POST"
+                <form action="{{ route('franchise.submit') }}" method="POST"
                     class="d-flex flex-column align-items-center justify-content-center gap-3 p-0 me-0 w-100">
                     @csrf
                     <div class="w-100">
@@ -56,14 +56,14 @@
                     <div class="w-100">
                         <label for="" style="color: #fcb45c; font-weight: bolder">Company Name (if
                             applicable)</label>
-                        <input type="text" name="company_website" id="" placeholder="Enter your company name"
+                        <input type="text" name="company_name" id="" placeholder="Enter your company name"
                             class="w-100 form-input" />
                     </div>
 
                     <div class="w-100">
                         <label for="" style="color: #fcb45c; font-weight: bolder">Company Website (if
                             applicable)</label>
-                        <input type="text" name="current_city" id="" placeholder="Enter your company website"
+                        <input type="text" name="company_website" id="" placeholder="Enter your company website"
                             class="w-100 form-input" />
                     </div>
 
@@ -72,7 +72,7 @@
                             (required)</label>
 
 
-                        <select class="w-100 form-input" name='available_investment'>
+                        <select required class="w-100 form-input" name='available_investment'>
                             <option value="300,000 to $ 600,000">300,000 to $ 600,000</option>
                             <option value="600,000 to $ 1,000,000">600,000 to $ 1,000,000</option>
                             <option value="Above $ 1,000,000">Above $ 1,000,000</option>
@@ -82,29 +82,25 @@
                     <div class="w-100">
                         <label for="" style="color: #fcb45c; font-weight: bolder">Preferred Franchise Location
                             (required)</label>
-                        <input type="text" name="preferred_location" id=""
+                        <input required type="text" name="preferred_location" id=""
                             placeholder="Enter preferred franchise location" class="w-100 form-input" />
                     </div>
 
                     <div class="w-100">
                         <label for="" style="color: #fcb45c; font-weight: bolder">Franchise Interest Type
                             (required)</label>
-                        {{-- <input type="text" name="preferred_location" id="" placeholder="Enter preferred franchise location"
-                            class="w-100 form-input" /> --}}
-                        {{-- radion --}}
+
                         <br>
                         <div class="d-flex justify-content-center">
                             <div class="form-check-inline">
-                                <input class="form-check-input" type="radio" name="interest_type"
-                                value="Unit Franchise"
+                                <input class="form-check-input" required type="radio" name="interest_type" value="Unit Franchise"
                                     id="interest_type1">
                                 <label class="form-check-label" for="interest_type1" style="color: white">
                                     Unit Franchise
                                 </label>
                             </div>
                             <div class="form-check-inline">
-                                <input class="form-check-input" type="radio" name="interest_type"
-                                value="Master Franchise"
+                                <input class="form-check-input" type="radio" name="interest_type" value="Master Franchise"
                                     id="interest_type2">
                                 <label class="form-check-label" for="interest_type2" style="color: white">
                                     Master Franchise
@@ -113,8 +109,47 @@
                         </div>
                     </div>
 
-                    <textarea name="description" required id="" placeholder="Desscription" class="form-input w-100"></textarea>
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <div class="w-100">
+                        <label for="" style="color: #fcb45c; font-weight: bolder">
+                            Do you have any past experience or are you currently engaged in any retail or F&B activities? If
+                            yes, please mention it.
+                        </label>
+                        <input type="text" name="past_experience" id=""
+                            placeholder="Provide details of your experience" class="w-100 form-input" />
+                    </div>
+
+                    <div class="w-100">
+                        <label for="" style="color: #fcb45c; font-weight: bolder">
+                            How did you hear about our franchise opportunity? (required)
+                        </label>
+
+                        <select class="w-100 form-input" name='lead_from' required>
+                            <option value="Google Search">Google Search</option>
+                            <option> Visited a Branch</option>
+                            <option>Social Media</option>
+                            <option>Friend or Family</option>
+                            <option>Advertising</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="w-100">
+                        <label for="" style="color: #fcb45c; font-weight: bolder">
+                            Declaration
+                        </label>
+                        {{-- checkbox --}}
+                        <br>
+                        <div class="form-check d-flex mt-1">
+                            <input class="form-check-inline input" type="checkbox" value="" id="flexCheckDefault"
+                                required>
+                            <label class="form-check-inline label" for="flexCheckDefault" style="color: white">
+                                I hereby declare that the information provided by me is true and correct to the best of my
+                                knowledge and belief and I consent to the use of this information for franchise assessment purposes.
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Inquiry</button>
                 </form>
             </div>
 

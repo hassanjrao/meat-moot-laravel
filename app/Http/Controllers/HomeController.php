@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContactUsRequest;
 use App\Models\Extra;
 use App\Models\FAQ;
+use App\Models\FranchiseRequest;
 use App\Models\FullCourseMeal;
 use App\Models\MenuHighlight;
 use App\Models\OurMenu;
@@ -99,4 +100,40 @@ class HomeController extends Controller
 
         return redirect()->back()->withToastSuccess('Request submitted successfully, we will get back to you soon');
     }
+
+
+    public function submitFranchiseInquiry(Request $request){
+      
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required',
+            'current_city'=>'required',
+            'company_name'=>'nullable',
+            'company_website'=>'nullable',
+            'available_investment'=>'required',
+            'preferred_location'=>'required',
+            'interest_type'=>'required',
+            'past_experience'=>'nullable',
+            'lead_from'=>'required',
+        ]);
+
+        FranchiseRequest::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'current_city'=>$request->current_city,
+            'company_name'=>$request->company_name,
+            'company_website'=>$request->company_website,
+            'available_investment'=>$request->available_investment,
+            'preferred_location'=>$request->preferred_location,
+            'interest_type'=>$request->interest_type,
+            'past_experience'=>$request->past_experience,
+            'lead_from'=>$request->lead_from,
+        ]);
+
+        return redirect()->back()->withToastSuccess('Request submitted successfully, we will get back to you soon');
+    }
+
+
 }

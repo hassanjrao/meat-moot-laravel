@@ -36,6 +36,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/submit-request', [HomeController::class, 'submitRequest'])->name('contact.submit');
 
 Route::get('/franchise', [HomeController::class, 'franchise'])->name('franchise');
+Route::post('/submit-franchise-inquiry', [HomeController::class, 'submitFranchiseInquiry'])->name('franchise.submit');
 
 Route::get('/investors', [HomeController::class, 'investors'])->name('investors');
 Route::get('/events-and-news', [HomeController::class, 'eventNews'])->name('event-news');
