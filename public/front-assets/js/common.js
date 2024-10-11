@@ -19,8 +19,9 @@ document.getElementById("navbarToggle").addEventListener("click", function () {
   // Show or hide the navbar collapse
   if (!isExpanded) {
     console.log('as')
-    navbar.classList.add("show");
+
   this.setAttribute("aria-expanded", "true");
+    navbar.classList.add("show");
   } else {
     navbar.classList.remove("show");
     this.setAttribute("aria-expanded", "false");

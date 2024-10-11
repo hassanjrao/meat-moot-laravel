@@ -205,6 +205,8 @@
 @endsection
 
 @push('scripts')
+
+<script src="{{ asset('front-assets/js/common.js') }}"></script>
     <script src="{{ asset('front-assets/js/investors.js') }}"></script>
 
     <script>

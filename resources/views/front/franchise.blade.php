@@ -156,3 +156,8 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+
+<script src="{{ asset('front-assets/js/common.js') }}"></script>
+@endpush

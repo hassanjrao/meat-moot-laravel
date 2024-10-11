@@ -67,7 +67,7 @@
 
 
         <!--
-                        numbers above dynamic pictures -->
+                            numbers above dynamic pictures -->
 
         <div class="p-3 text-white">
             <div>
@@ -228,85 +228,86 @@
             </div>
         </div>
         <!-- <div class="container-fluid footer-section p-0 m-0">
-                          <div class="container px-5">
-                            <div class="row">
-                              <div
-                                class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-                              >
-                                <div class="content py-5 last-section">
-                                  <h1 style="font-size: 2.5rem; color: orange">Stay Connected</h1>
-                                  <div class="d-flex flex-wrap justify-content-center pt-5 gap-3">
-                                    <img
-                                      src="{{ asset('front-assets/media/images/download (12).svg') }}"
-                                      class="img-fluid"
-                                      alt="Image 3"
-                                    />
+                              <div class="container px-5">
+                                <div class="row">
+                                  <div
+                                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
+                                  >
+                                    <div class="content py-5 last-section">
+                                      <h1 style="font-size: 2.5rem; color: orange">Stay Connected</h1>
+                                      <div class="d-flex flex-wrap justify-content-center pt-5 gap-3">
+                                        <img
+                                          src="{{ asset('front-assets/media/images/download (12).svg') }}"
+                                          class="img-fluid"
+                                          alt="Image 3"
+                                        />
 
-                                    <img
-                                      src="{{ asset('front-assets/media/images/download (5).svg') }}"
-                                      class="img-fluid"
-                                      alt="Image 2"
-                                    />
-                                    <img
-                                      src="{{ asset('front-assets/media/images/download (8).svg') }}"
-                                      class="img-fluid"
-                                      alt="Image 1"
-                                    />
+                                        <img
+                                          src="{{ asset('front-assets/media/images/download (5).svg') }}"
+                                          class="img-fluid"
+                                          alt="Image 2"
+                                        />
+                                        <img
+                                          src="{{ asset('front-assets/media/images/download (8).svg') }}"
+                                          class="img-fluid"
+                                          alt="Image 1"
+                                        />
 
-                                    <img
-                                      src="{{ asset('front-assets/media/images/download (3).svg') }}"
-                                      class="img-fluid"
-                                      alt="Image 4"
-                                    />
-                                    <img
-                                      src="{{ asset('front-assets/media/images/download (4).svg') }}"
-                                      class="img-fluid"
-                                      alt="Image 4"
-                                    />
+                                        <img
+                                          src="{{ asset('front-assets/media/images/download (3).svg') }}"
+                                          class="img-fluid"
+                                          alt="Image 4"
+                                        />
+                                        <img
+                                          src="{{ asset('front-assets/media/images/download (4).svg') }}"
+                                          class="img-fluid"
+                                          alt="Image 4"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
+                                  >
+                                    <div class="content py-5 last-section">
+                                      <img
+                                        src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
+                                        class="img-fluid"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
+                                  >
+                                    <div class="content py-5">
+                                      <h2 class="text-light text-center">Our Location</h2>
+                                      <h5 class="text-light text-center">HeadQuater</h5>
+                                      <h6 class="text-light text-center">
+                                        Stil-Plaza No.4537897 kdly
+                                      </h6>
+                                      <h6 class="text-center text-center">Istanbol</h6>
+                                      <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" class="let-meet img-fluid" />
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-                              >
-                                <div class="content py-5 last-section">
-                                  <img
-                                    src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
-                                    class="img-fluid"
-                                  />
+                                <div class="row">
+                                  <div class="col text-center">
+                                    <p class="text-light">
+                                      <span class="me-5">Privacy policy</span>
+                                      <span>Term of use</span>
+                                    </p>
+                                  </div>
                                 </div>
-                              </div>
-                              <div
-                                class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-                              >
-                                <div class="content py-5">
-                                  <h2 class="text-light text-center">Our Location</h2>
-                                  <h5 class="text-light text-center">HeadQuater</h5>
-                                  <h6 class="text-light text-center">
-                                    Stil-Plaza No.4537897 kdly
-                                  </h6>
-                                  <h6 class="text-center text-center">Istanbol</h6>
-                                  <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" class="let-meet img-fluid" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col text-center">
-                                <p class="text-light">
-                                  <span class="me-5">Privacy policy</span>
-                                  <span>Term of use</span>
+                                <p class="text-light text-center m-0 pb-5">
+                                Copyright © 2024 Meat Moot | Powered by Meat Moot
                                 </p>
                               </div>
-                            </div>
-                            <p class="text-light text-center m-0 pb-5">
-                            Copyright © 2024 Meat Moot | Powered by Meat Moot
-                            </p>
-                          </div>
-                        </div> -->
+                            </div> -->
     </div>
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('front-assets/js/common.js') }}"></script>
     <script src="{{ asset('front-assets/js/our-menu.js') }}"></script>
 
     <script>

@@ -36,32 +36,27 @@
             <div>
                 <!-- First row (Lamb Shoulder) -->
                 @php
-                    $i=1;
+                    $i = 1;
                 @endphp
 
                 @foreach ($menuHighlights as $ind => $menuHighlight)
-
                     @php
-                        $order='order-1';
-                        $imgOrder='order-2';
+                        $order = 'order-1';
+                        $imgOrder = 'order-2';
 
-
-
-                        if($i % 2 == 0){
-                            $order='order-lg-2';
-                            $imgOrder='order-lg-1';
+                        if ($i % 2 == 0) {
+                            $order = 'order-lg-2';
+                            $imgOrder = 'order-lg-1';
                         }
 
                         $i++;
-
 
                     @endphp
 
                     <div class="row">
                         <div class="col-md-6 p-0 order-md-1 {{ $order }}">
                             <div class="card-item">
-                                <img src="{{ $menuHighlight->image_url }}" class="img-fluid"
-                                    alt="Lamb Shoulder" />
+                                <img src="{{ $menuHighlight->image_url }}" class="img-fluid" alt="Lamb Shoulder" />
                             </div>
                         </div>
                         <div
@@ -102,3 +97,7 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('front-assets/js/common.js') }}"></script>
+@endpush
