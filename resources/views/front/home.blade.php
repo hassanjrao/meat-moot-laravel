@@ -79,7 +79,7 @@
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6 d-flex flex-row-reverse">
                     <!-- Knife logo -->
-                    <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.jpg') }}" alt="Meat Moot"
+                    <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.jpg') }}" alt="lamb"
                         class="testimonial-logo" />
                 </div>
                 <div class="col-lg-6 ps-5">
@@ -92,7 +92,7 @@
                     <!-- Divider -->
                     <div class="divider my-5"></div>
                     <p class="testimonial-quote">
-                        At Meat Moot, we give you the kingly presentation of great meat
+                        At {{  config('app.name') }}, we give you the kingly presentation of great meat
                         garnished with a world-class recipe that will always leave you
                         wanting more.
                     </p>
@@ -167,7 +167,7 @@
             class="container-fluid p-0 text-center text-white d-flex flex-column align-content-center justify-content-center gap-4">
             <h1 class="title">WE ARE GROWING EVERY DAY</h1>
             <h2 class="subtitle container">
-                Hankering For More Information About Having Your Own Meat Moot
+                Hankering For More Information About Having Your Own {{ config('app.name')  }}
                 Restaurant?
             </h2>
             <a href="#connect" class="btn-contact mx-auto">Let's Connect</a>
