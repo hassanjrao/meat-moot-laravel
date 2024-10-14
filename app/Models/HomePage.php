@@ -35,6 +35,9 @@ class HomePage extends Model
 
     public function getcelebrateImagesUrlAttribute()
     {
+        // convert celebrate_images to an array
+
+        $celebrate_images = json_decode($this->celebrate_images, true);
         return array_map(function($image){
             return Storage::url($image);
         },$this->celebrate_images);
