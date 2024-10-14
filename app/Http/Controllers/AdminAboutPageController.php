@@ -125,7 +125,7 @@ class AdminAboutPageController extends Controller
                 $about_images[] = $image->store('about');
             }
             $aboutPage->update([
-                'about_images' => $about_images,
+                'about_images' => json_encode($about_images),
             ]);
         }
 
@@ -135,7 +135,7 @@ class AdminAboutPageController extends Controller
                 $recommendated_by_images[] = $image->store('about');
             }
             $aboutPage->update([
-                'recommendated_by_images' => $recommendated_by_images,
+                'recommendated_by_images' => json_encode($recommendated_by_images),
             ]);
         }
 
@@ -145,7 +145,7 @@ class AdminAboutPageController extends Controller
                 $celebrate_images[] = $image->store('about');
             }
             $aboutPage->update([
-                'celebrate_images' => $celebrate_images,
+                'celebrate_images' => json_encode($celebrate_images),
             ]);
         }
 

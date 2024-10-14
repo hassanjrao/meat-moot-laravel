@@ -14,11 +14,6 @@ class AboutPage extends Model
 
     protected $appends=['hero_bg_image_url','image_url','atmosphere_bg_image_url','about_images_url','recommendated_by_images_url','celebrate_images_url'];
 
-    protected $casts=[
-        'about_images'=>'array',
-        'recommendated_by_images'=>'array',
-        'celebrate_images'=>'array',
-    ];
 
     public function getHeroBgImageUrlAttribute()
     {
@@ -37,24 +32,27 @@ class AboutPage extends Model
 
     public function getAboutImagesUrlAttribute()
     {
+        $about_images = json_decode($this->about_images, true);
         return array_map(function($image){
             return Storage::url($image);
-        },$this->about_images);
+        },$about_images);
     }
 
     public function getRecommendatedByImagesUrlAttribute()
     {
+        $recommendated_by_images = json_decode($this->recommendated_by_images, true);
         return array_map(function($image){
             return Storage::url($image);
-        },$this->recommendated_by_images);
+        },$recommendated_by_images);
     }
 
     public function getCelebrateImagesUrlAttribute()
     {
+        $celebrate_images = json_decode($this->celebrate_images, true);
         return array_map(function($image){
             return Storage::url($image);
-        },$this->celebrate_images);
+        },$celebrate_images);
     }
 
-    
+
 }
