@@ -126,7 +126,7 @@ class AdminHomePageController extends Controller
 
 
 
-        if(count($request->celebrate_images)>0){
+        if($request->celebrate_images && count($request->celebrate_images)>0){
             $celebrate_images=[];
             foreach($request->celebrate_images as $image){
                 $celebrate_images[]=$image->store('home-page');
