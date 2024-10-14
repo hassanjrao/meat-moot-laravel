@@ -8,8 +8,12 @@ use App\Http\Controllers\AdminFaqController;
 use App\Http\Controllers\AdminFranchiseRequestController;
 use App\Http\Controllers\AdminFullCourseMealController;
 use App\Http\Controllers\AdminHomePageController;
+use App\Http\Controllers\AdminInvestorPageController;
+use App\Http\Controllers\AdminInvestorPageStepController;
 use App\Http\Controllers\AdminMenuHighlightController;
+use App\Http\Controllers\AdminMenuPageController;
 use App\Http\Controllers\AdminOurMenuController;
+use App\Http\Controllers\AdminOurMenuPageController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\HomeController;
@@ -70,5 +74,19 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
 
     Route::resource('about-page', AdminAboutPageController::class)->only(['index','update']);
+
+
+    Route::resource('menu-page', AdminMenuPageController::class)->only(['index','update']);
+
+
+    Route::resource('our-menu-page', AdminOurMenuPageController::class)->only(['index','update']);
+
+
+    Route::resource('investor-page', AdminInvestorPageController::class)->only(['index','update']);
+
+
+
+    Route::resource('franchise-steps', AdminInvestorPageStepController::class);
+
 
 });

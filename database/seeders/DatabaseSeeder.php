@@ -25,6 +25,10 @@ class DatabaseSeeder extends Seeder
             // FAQSeeder::class,
             HomePageSeeder::class,
             AboutPageSeeder::class,
+            MenuPageSeeder::class,
+            OurMenuPageSeeder::class,
+            InvestorPageStepSeeder::class,
+            InvestorPageSeeder::class,
         ]);
     }
 }

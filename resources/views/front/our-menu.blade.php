@@ -6,22 +6,50 @@
     <link rel="stylesheet" href="{{ asset('front-assets/css/our-menu.css') }}" />
 @endsection
 
-@section('page-title', 'Our Menu')
+
+@php
+    $settings = \App\Models\Setting::first();
+    $ourMenuPage = \App\Models\OurMenuPage::first();
+@endphp
+
+@section('page-title', $ourMenuPage->hero_title)
 
 
 @section('content')
-    <div class="about-image">
+    <div class="about-image" style="background-image: url('{{ $ourMenuPage->hero_bg_image_url }}')">
         <div class="black">
             <div class="meatmoot-h">
                 <h1 class="heading pt-5 mt-5">{{ config('app.name') }}</h1>
-                <h2 class="text-center menu py-3">MENU</h2>
+                <h2 class="text-center menu py-3">
+                    {{ $ourMenuPage->hero_title }}
+                </h2>
                 <div class="heading-hr"></div>
-                <h4 class="text-center country m-3 py-3">Al-hasan Saudia Arabia</h4>
+                <h4 class="text-center country m-3 py-3">
+                    {{ $settings->location }} - {{ $settings->city }}
+                </h4>
                 <div class="container d-flex align-items-center justify-content-center py-3">
-                    <img src="{{ asset('front-assets/media/images/download (8).svg') }}" class="img-fluid mx-2" />
-                    <img src="{{ asset('front-assets/media/images/download (12).svg') }}" class="img-fluid mx-2" />
-                    <img src="{{ asset('front-assets/media/images/downloadWhatsapp.svg') }}" class="img-fluid mx-2" />
-                    <img src="{{ asset('front-assets/media/images/download (4).svg') }}" class="img-fluid mx-2" />
+
+                    @if ($settings->instagram)
+                        <a target="_blank" href="{{ $settings->instagram }}">
+                            <img src="{{ asset('front-assets/media/images/download (8).svg') }}" class="img-fluid mx-2" />
+                        </a>
+                    @endif
+                    @if ($settings->facebook)
+                        <a target="_blank" href="{{ $settings->facebook }}">
+                            <img src="{{ asset('front-assets/media/images/download (12).svg') }}" class="img-fluid mx-2" />
+                        </a>
+                    @endif
+                    @if ($settings->whatsapp)
+                        <a target="_blank" href="{{ $settings->whatsapp }}">
+                            <img src="{{ asset('front-assets/media/images/downloadWhatsapp.svg') }}"
+                                class="img-fluid mx-2" />
+                        </a>
+                    @endif
+                    @if ($settings->tiktok)
+                        <a target="_blank" href="{{ $settings->tiktok }}">
+                            <img src="{{ asset('front-assets/media/images/download (4).svg') }}" class="img-fluid mx-2" />
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -67,7 +95,7 @@
 
 
         <!--
-                            numbers above dynamic pictures -->
+                                            numbers above dynamic pictures -->
 
         <div class="p-3 text-white">
             <div>
@@ -155,154 +183,10 @@
             </div>
 
             <div class="letsmeat pb-5 d-flex justify-content-center align-content-center">
-                <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" />
+                <img src="{{ $settings->lets_meat_logo_url }}" />
             </div>
         </div>
 
-        <!-- Footer -->
-
-        <div class="container-fluid last-section pb-4">
-            <div class="container px-5">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
-                        <div class="content last-section">
-                            <h1 class="stay">Stay Connected</h1>
-
-                            <div class="container">
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <!-- Use Bootstrap grid system -->
-                                    <div class="my-2">
-                                        <img src="{{ asset('front-assets/media/images/download (12).svg') }}"
-                                            class="img-fluid mx-2 mb-4" alt="Image 1" />
-                                    </div>
-                                    <div class="my-2">
-                                        <img src="{{ asset('front-assets/media/images/download (5).svg') }}"
-                                            class="img-fluid mx-2 mb-4" alt="Image 5" />
-                                    </div>
-
-                                    <div class="my-2">
-                                        <img src="{{ asset('front-assets/media/images/download (8).svg') }}"
-                                            class="img-fluid mx-2 mb-4" alt="Image 5" />
-                                    </div>
-                                    <div class="my-2">
-                                        <img src="{{ asset('front-assets/media/images/download (3).svg') }}"
-                                            class="img-fluid mx-2 mb-4" alt="Image 3" />
-                                    </div>
-
-                                    <div class="my-2">
-                                        <img src="{{ asset('front-assets/media/images/download (4).svg') }}"
-                                            class="img-fluid mx-2 mb-4" alt="Image 2" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
-                        <div class="content last-section">
-                            <img src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
-                                class="img-fluid" />
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
-                        <div class="content py-5 font-inter w-100">
-                            <h2 class="text-light text-center pb-5">Our Location</h2>
-                            <h5 class="text-light text-center">HeadQuater</h5>
-                            <h6 class="text-light text-center">
-                                Sıtkı Bey Plaza No:82 K:7 34736 Kadıköy - ISTANBUL, TURKEY.
-                            </h6>
-                            <h6 class="text-light text-center">Istanbol</h6>
-                            <img src="{{ asset('front-assets/media/images/letsmeat.png') }}"
-                                class="let-meet img-fluid pt-2" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center d-flex align-items-center justify-content-center gap-5 px-5 text-end">
-                        <p class="text-light">PRIVACY POLICY</p>
-                        <p class="text-light">TERMS OF USE</p>
-                    </div>
-                </div>
-                <p class="text-light text-center mb-0">
-                    Copyright © 2024 Meat Moot | Powered by Meat Moot
-                </p>
-            </div>
-        </div>
-        <!-- <div class="container-fluid footer-section p-0 m-0">
-                              <div class="container px-5">
-                                <div class="row">
-                                  <div
-                                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-                                  >
-                                    <div class="content py-5 last-section">
-                                      <h1 style="font-size: 2.5rem; color: orange">Stay Connected</h1>
-                                      <div class="d-flex flex-wrap justify-content-center pt-5 gap-3">
-                                        <img
-                                          src="{{ asset('front-assets/media/images/download (12).svg') }}"
-                                          class="img-fluid"
-                                          alt="Image 3"
-                                        />
-
-                                        <img
-                                          src="{{ asset('front-assets/media/images/download (5).svg') }}"
-                                          class="img-fluid"
-                                          alt="Image 2"
-                                        />
-                                        <img
-                                          src="{{ asset('front-assets/media/images/download (8).svg') }}"
-                                          class="img-fluid"
-                                          alt="Image 1"
-                                        />
-
-                                        <img
-                                          src="{{ asset('front-assets/media/images/download (3).svg') }}"
-                                          class="img-fluid"
-                                          alt="Image 4"
-                                        />
-                                        <img
-                                          src="{{ asset('front-assets/media/images/download (4).svg') }}"
-                                          class="img-fluid"
-                                          alt="Image 4"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-                                  >
-                                    <div class="content py-5 last-section">
-                                      <img
-                                        src="{{ asset('front-assets/media/images/meatmoot-restaurant-smoked-meat-1-768x768.jpeg') }}"
-                                        class="img-fluid"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center"
-                                  >
-                                    <div class="content py-5">
-                                      <h2 class="text-light text-center">Our Location</h2>
-                                      <h5 class="text-light text-center">HeadQuater</h5>
-                                      <h6 class="text-light text-center">
-                                        Stil-Plaza No.4537897 kdly
-                                      </h6>
-                                      <h6 class="text-center text-center">Istanbol</h6>
-                                      <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" class="let-meet img-fluid" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col text-center">
-                                    <p class="text-light">
-                                      <span class="me-5">Privacy policy</span>
-                                      <span>Term of use</span>
-                                    </p>
-                                  </div>
-                                </div>
-                                <p class="text-light text-center m-0 pb-5">
-                                Copyright © 2024 Meat Moot | Powered by Meat Moot
-                                </p>
-                              </div>
-                            </div> -->
     </div>
 @endsection
 

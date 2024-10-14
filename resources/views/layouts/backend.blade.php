@@ -250,6 +250,38 @@
                             </a>
                         </li>
 
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/menu-page*') ? ' active' : '' }}"
+                                href="{{ route('admin.menu-page.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">Menu Page</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/our-menu-page*') ? ' active' : '' }}"
+                                href="{{ route('admin.our-menu-page.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">Our Menu Page</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/investor-page*') ? ' active' : '' }}"
+                                href="{{ route('admin.investor-page.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">Investor Page</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/franchise-steps*') ? ' active' : '' }}"
+                                href="{{ route('admin.franchise-steps.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">Franchise Steps</span>
+                            </a>
+                        </li>
+
 
 
                     </ul>

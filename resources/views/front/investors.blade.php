@@ -7,24 +7,28 @@
     <link rel="stylesheet" href="{{ asset('front-assets/css/invertors.css') }}" />
 @endsection
 
-@section('page-title', 'Investors')
 
 @php
     $settings = \App\Models\Setting::first();
+    $investorPage = \App\Models\InvestorPage::first();
+    $steps = \App\Models\InvestorPageStep::all();
 @endphp
+
+@section('page-title', $investorPage->hero_title)
+
 
 
 @section('content')
-    <div class="invertors-hero-section">
+    <div class="invertors-hero-section" style="background-image: url('{{ $investorPage->hero_bg_image_url }}')">
         <div class="w-100 h-100 background-grey d-flex align-items-center justify-content-center text-light">
             <div class="d-flex flex-column gap-5">
-                <h1 class="yellow-text text-center fw-light mt- ">INVESTORS</h1>
+                <h1 class="yellow-text text-center fw-light mt- ">
+                    {{ $investorPage->hero_title }}
+                </h1>
                 <div class="line"></div>
                 <div>
                     <h2 class="text-justify fw-light mt-5 pt-5">
-                        If you're a leader with strong business acumen and have a passion
-                        for the world of hospitality, franchising with our resturant maybe
-                        the pefrect oppurtunity for you!
+                        {{ $investorPage->hero_description }}
                     </h2>
                 </div>
             </div>
@@ -63,124 +67,45 @@
         <h1>Franchise Process</h1>
 
         <div class="franchise-process-cards">
-            <div class="parent1 p-5">
-                <div class="child empty w-100">
-                    <p class="text-end w-100 me-auto">Step 01</p>
-                </div>
+            @php
+                $i = 1;
+            @endphp
 
-                <div>
-                    <div class="step-circle"><i class="fas fa-clipboard-list"></i></div>
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="content-div" data-step="Step 01">
-                    <h2 class="text-center">Inquiry</h2>
-                    <p>
-                        As the initial step in the Franchise process, we invite you to
-                        complete our franchise Inquiry Form if you are interested in
-                        gaining further insights into becominh a Meat Moot partner
-                    </p>
-                </div>
-            </div>
-            <div class="parent1 p-5">
-                <div class="child empty w-100">
-                    <p class="text-start ms-auto">Step 02</p>
-                </div>
+            @foreach ($steps as $ind=> $step)
+                @php
 
-                <div>
-                    <div class="step-circle"><i class="fa-solid fa-phone"></i></div>
-                    <div class="vertical-line"></div>
-                </div>
+                $textOrder='text-end w-100 me-auto';
 
-                <div class="content-div" data-step="Step 02">
-                    <h2 class="text-center">Initial Discovery Call</h2>
-                    <p>
-                        Upon receipt of oyour inquiry form, a member of our franchise
-                        developmentteam with reach out to you to inquire further about
-                        your background, including Financial Statements, list of
-                        Intellectual Capital and more
-                    </p>
-                </div>
-            </div>
-            <div class="parent1 p-5">
-                <div class="child empty w-100">
-                    <p class="text-end w-100 me-auto">Step 03</p>
-                </div>
-                <div>
-                    <div class="step-circle">
-                        <i class="fa-solid fa-book-open"></i>
+                if($i % 2 == 0){
+                    $textOrder='text-start ms-auto';
+                }
+
+                $i++;
+
+                @endphp
+
+                <div class="parent1 p-5">
+                    <div class="child empty w-100">
+                        <p class="{{ $textOrder }}">Step
+                            {{ ++$ind }}
+                        </p>
                     </div>
-                    <div class="vertical-line" id="small-line"></div>
-                </div>
-                <div class="content-div" data-step="Step 03">
-                    <h2>Review FDD</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                        odit recusandae facilis aliquid exercitationem vero provident,
-                        minus ex reiciendis incidunt laborum! Error eligendi perferendis
-                        voluptatibus porro sapiente recusandae suscipit numquam?
-                    </p>
-                </div>
-            </div>
-            <div class="parent1 p-5">
-                <div class="child empty w-100">
-                    <p class="text-start ms-auto">Step 04</p>
-                </div>
 
-                <div>
-                    <div class="step-circle">
-                        <i class="fa-solid fa-people-arrows"></i>
+                    <div>
+                        <div class="step-circle"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="vertical-line"></div>
                     </div>
-                    <div class="vertical-line"></div>
+                    <div class="content-div" data-step="Step 01">
+                        <h2 class="text-center">
+                            {{ $step->title }}
+                        </h2>
+                        <p>
+                            {{ $step->description }}
+                        </p>
+                    </div>
                 </div>
+            @endforeach
 
-                <div class="content-div" data-step="Step 04">
-                    <h2 class="text-center">Discovery Day</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                        odit recusandae facilis aliquid exercitationem vero provident,
-                        minus ex reiciendis incidunt laborum! Error eligendi perferendis
-                        voluptatibus porro sapiente recusandae suscipit numquam?
-                    </p>
-                </div>
-            </div>
-            <div class="parent1 p-5">
-                <div class="child empty w-100" id="borderless">
-                    <p class="text-end w-100 me-auto">Step 05</p>
-                </div>
-                <div>
-                    <div class="step-circle"><i class="fas fa-clipboard-list"></i></div>
-                    <div class="vertical-line" id="small-line"></div>
-                </div>
-                <div class="content-div" data-step="Step 05">
-                    <h2 class="text-center">Finalize Partnership</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                        odit recusandae facilis aliquid exercitationem vero provident,
-                        minus ex reiciendis incidunt laborum! Error eligendi perferendis
-                        voluptatibus porro sapiente recusandae suscipit numquam?
-                    </p>
-                </div>
-            </div>
-            <div class="parent1 p-5">
-                <div class="child empty w-100">
-                    <p class="text-start ms-auto">Step 06</p>
-                </div>
-
-                <div>
-                    <div class="step-circle"><i class="fa-solid fa-rocket"></i></div>
-                    <div class="vertical-line" id="small-line"></div>
-                </div>
-
-                <div class="content-div" data-step="Step 06">
-                    <h2 class="text-center">Celebrate Success</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                        odit recusandae facilis aliquid exercitationem vero provident,
-                        minus ex reiciendis incidunt laborum! Error eligendi perferendis
-                        voluptatibus porro sapiente recusandae suscipit numquam?
-                    </p>
-                </div>
-            </div>
         </div>
     </div>
     <!-- Stay Section -->
@@ -205,8 +130,7 @@
 @endsection
 
 @push('scripts')
-
-<script src="{{ asset('front-assets/js/common.js') }}"></script>
+    <script src="{{ asset('front-assets/js/common.js') }}"></script>
     <script src="{{ asset('front-assets/js/investors.js') }}"></script>
 
     <script>

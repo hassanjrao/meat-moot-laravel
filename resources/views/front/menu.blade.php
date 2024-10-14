@@ -7,16 +7,25 @@
 
 @endsection
 
-@section('page-title', 'Menu')
+
+@php
+    $settings= \App\Models\Setting::first();
+    $menuPage= \App\Models\MenuPage::first();
+@endphp
+
+@section('page-title', $menuPage->hero_title)
+
 
 
 @section('content')
-    <section class="hero-section d-flex justify-content-center align-items-center">
+    <section class="hero-section d-flex justify-content-center align-items-center" style="background: url('{{ $menuPage->hero_bg_image_url }}') no-repeat center center">
         <div class="content text-center">
-            <h1 class="hero-title">The Menu</h1>
+            <h1 class="hero-title">
+                {{ $menuPage->hero_title }}
+            </h1>
             <div class="underline"></div>
         </div>
-        <div class="lets-meat">LET'S MEAT</div>
+        <div class="lets-meat">{{ config('app.name') }}</div>
         <div class="overlay"></div>
     </section>
 
@@ -24,8 +33,7 @@
     <section class="experience-section py-3 text-center">
         <div class="container d-flex flex-column align-items-center justify-content-center">
             <h2 class="experience-text mb-5">
-                Every bite is a wholesome experience! You cannot resist the taste of
-                the <span class="font-weight-bold">smoked <br />flavors</span>.
+                {{ $menuPage->tagline }}
             </h2>
         </div>
     </section>
@@ -93,7 +101,7 @@
             Our Menu
         </button>
         <div class="letsmeat pb-5">
-            <img src="{{ asset('front-assets/media/images/letsmeat.png') }}" />
+            <img src="{{ $settings->lets_meat_logo_url }}" />
         </div>
     </div>
 @endsection
