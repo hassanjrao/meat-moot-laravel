@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ExtraSeeder::class,
             SettingSeeder::class,
             FAQSeeder::class,
+            HomePageSeeder::class,
         ]);
     }
 }

@@ -7,10 +7,14 @@
     <!-- Hero Section -->
     <div class="container-fluid p-0 hero-section d-flex justify-content-center align-items-center">
         <div class="overlay"></div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="{{ $homePage->hero_bg_video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="content mt-5 text-center container justify-content-start d-flex flex-column">
             <div class="row">
                 <h1 class="custom-heading offset-2 text-start">
-                    The Real Taste of Smoked Meat & a Unique Adventure Awaits
+                    {{ $homePage->hero_title }}
                 </h1>
             </div>
             <div class="row mt-4">
@@ -50,20 +54,20 @@
             <!-- Image Section -->
             <div class="menu-image-container mb-4 position-relative">
                 <div class="image-card"></div>
-                <img src="{{ asset('front-assets/media/images/home-meatmoot-smoked-meat-.webp') }}" alt="Menu Image"
-                    class="menu-image-meat position-absolute" />
+                <img src="{{ $homePage->concept_image_url }}" alt="Menu Image" class="menu-image-meat position-absolute" />
             </div>
             <!-- Text Section -->
             <div class="menu-content d-flex flex-column justify-content-start align-items-start">
                 <img src="{{ asset('front-assets/media/images/download (14).svg') }}" class="fork-image m-auto m-lg-0"
                     alt="" />
-                <h2 class="menu-heading">Menu Concept</h2>
-                <h3 class="menu-subheading">The unique Taste</h3>
+                <h2 class="menu-heading">
+                    {{ $homePage->concept_heading }}
+                </h2>
+                <h3 class="menu-subheading">
+                    {{ $homePage->concept_subheading }}
+                </h3>
                 <p class="menu-description">
-                    What distinguishes our menu and the concept behind it are the modern
-                    interpretations of familiar dishes and flavor combinations they
-                    create, resulting in unique tastes, innovative presentations, and a
-                    distinctive Quality Meats style.
+                    {{ $homePage->concept_description }}
                 </p>
             </div>
             <div class="image-container mb-4 mb-lg-0">
@@ -92,13 +96,13 @@
                     <!-- Divider -->
                     <div class="divider my-5"></div>
                     <p class="testimonial-quote">
-                        At {{  config('app.name') }}, we give you the kingly presentation of great meat
-                        garnished with a world-class recipe that will always leave you
-                        wanting more.
+                        {{ $homePage->ceo_message }}
                     </p>
 
                     <!-- Author -->
-                    <p class="testimonial-author">Istanbul Headquarters CEO</p>
+                    <p class="testimonial-author">
+                        {{ $homePage->ceo_location }}
+                    </p>
                 </div>
                 <!-- </div> -->
             </div>
@@ -145,33 +149,26 @@
                             <p class="menu-item-name text-start ps-4 w-75">{{ $menu->title }}</p>
                         </div>
                     @endforeach
-                    <!-- Menu Item 5 -->
-                    <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{ asset('front-assets/media/images/Lamb_ribs.png') }}" alt="Beef Brisket"
-                            class="img-fluid w-75" />
-                        <p class="menu-item-name text-start ps-4 w-75">LAMB RIBS</p>
-                    </div>
-                    <!-- Menu Item 6 -->
-                    <div class="menu-item w-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{ asset('front-assets/media/images/Beef_ribs.png') }}" alt="Beef Ribs"
-                            class="img-fluid w-75" />
-                        <p class="menu-item-name text-start ps-4 w-75">BEEF RIBS</p>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
     <!-- Section Info -->
-    <section class="container-fluid section-banner d-flex align-items-center justify-content-center">
+    <section class="container-fluid section-banner d-flex align-items-center justify-content-center"
+        style="background: url('{{ $homePage->connect_bg_image_url }}') no-repeat center center/cover;">
         <div
             class="container-fluid p-0 text-center text-white d-flex flex-column align-content-center justify-content-center gap-4">
-            <h1 class="title">WE ARE GROWING EVERY DAY</h1>
+            <h1 class="title">
+                {{ $homePage->connect_heading }}
+            </h1>
             <h2 class="subtitle container">
-                Hankering For More Information About Having Your Own {{ config('app.name')  }}
-                Restaurant?
+                {{ $homePage->connect_subheading }}
             </h2>
             <a href="#connect" class="btn-contact mx-auto">Let's Connect</a>
-            <p class="info-text">The success of our franchisees drives us.</p>
+            <p class="info-text">
+                {{ $homePage->connect_message }}
+            </p>
         </div>
     </section>
 
@@ -225,55 +222,48 @@
     <section class="container-fluid celebrations-section">
         <div
             class="container w-100 d-lg-flex flex-lg-row flex-md-column d-md-flex align-items-center justify-content-between py-5 gap-lg-5">
-            <div class="celebration-heading flex-column d-flex gap-3 me-auto">
-                <div class="border-celebrations"></div>
-                <h1>Celebrities Favorite Meat Restaurant</h1>
-                <div>
-                    <img src="{{ asset('front-assets/media/images/download (6).svg') }}" class=""
-                        alt="" />
-                    <p>
-                        Each of our meals has its own unique story that we want to share
-                        with you.
-                    </p>
-                </div>
-                <button class="btn btn-contact">Discover More</button>
-            </div>
 
-            <!-- Gallery -->
-            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center">
-                <div class="d-flex align-items-center justify-content-center flex-column">
-                    <img src="{{ asset('front-assets/media/images/meat-moot-new-cairo-opening3-300x200.jpeg') }}"
-                        class="image-1-gallery rounded mb-4 img-fluid" alt="Boat on Calm Water" />
-
-                    <img src="{{ asset('front-assets/media/images/meat-moot-happy-customerss-300x200.webp') }}"
-                        class="image-2-gallery rounded m-0 img-fluid" alt="Wintry Mountain Landscape" />
-                </div>
-                <div class="d-flex">
-                    <div class="mb-4 mb-md-0 ms-4 p-0 mx-0 justify-content-center d-flex flex-column align-items-center">
-                        <img src="{{ asset('front-assets/media/images/meat-moot-happy-customers-5-218x300.webp') }}"
-                            class="image-3-gallery img-fluid rounded pt-4 m-0" alt="Mountains in the Clouds" />
-
-                        <img src="{{ asset('front-assets/media/images/meatmoot-egypt-smoked-meat-1-150x150.jpeg') }}"
-                            class="image-4-gallery img-fluid rounded mt-5" alt="Boat on Calm Water" />
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="celebration-heading  flex-column d-flex gap-3 me-auto" style="width: 100%">
+                        <div class="border-celebrations"></div>
+                        <h1>
+                            {{ $homePage->celebrate_heading }}
+                        </h1>
+                        <div>
+                            <img src="{{ asset('front-assets/media/images/download (6).svg') }}" class=""
+                                alt="" />
+                            <p>
+                                {{ $homePage->celebrate_subheading }}
+                            </p>
+                        </div>
+                        <button class="btn btn-contact">Discover More</button>
                     </div>
+                </div>
 
-                    <div class="mb-4 mb-md-0 justify-content-end d-flex flex-column align-items-start">
-                        <img src="{{ asset('front-assets/media/images/meat-moot-happy-customers3-200x300.jpeg') }}"
-                            class="img-fluid rounded" alt="Waves at Sea" />
+                <div class="col-lg-8">
+                    <div class="row">
 
-                        <img src="{{ asset('front-assets/media/images/meat-moot-happy-customers-300x200.jpeg') }}"
-                            class="img-fluid rounded mb-4 image-end" alt="Yosemite National Park" />
+
+                        @foreach ($homePage->celebrate_images_url as $image)
+                            <div class="col-lg-6">
+
+
+                                <img src="{{ $image }}" class=" rounded mb-4 img-fluid" alt="celebrate image" />
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
+
+
             <!-- Gallery -->
         </div>
     </section>
 @endsection
 
 @push('scripts')
-
-
-<script src="{{ asset('front-assets/js/common.js') }}"></script>
-<script src="{{ asset('front-assets/js/script.js') }}"></script>
+    <script src="{{ asset('front-assets/js/common.js') }}"></script>
+    <script src="{{ asset('front-assets/js/script.js') }}"></script>
 @endpush

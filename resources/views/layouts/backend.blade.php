@@ -234,6 +234,14 @@
                             </a>
                         </li>
 
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/home-page*') ? ' active' : '' }}"
+                                href="{{ route('admin.home-page.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">Home Page</span>
+                            </a>
+                        </li>
+
 
 
                     </ul>

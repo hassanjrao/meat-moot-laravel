@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Array of background images
     const images = [
-        "/front-assets/media/images/BRISKET-1-scaled-e1673617952250.webp",
-        // "/front-assets/media/images/meat-moot-happy-customerss.webp",
-        "/front-assets/media/images/Lamb-Ribs-meat-moot-2-2048x1638.webp",
-        "/front-assets/media/images/LAMB-SHANK-meat-moot-smokingmeat-1-scaled-e1673617386290.webp",
-        "/front-assets/media/images/LAMB-SHOULDER-MEAT-MOOT-2-2048x1638.webp",
+        // "/front-assets/media/images/BRISKET-1-scaled-e1673617952250.webp",
+        // // "/front-assets/media/images/meat-moot-happy-customerss.webp",
+        // "/front-assets/media/images/Lamb-Ribs-meat-moot-2-2048x1638.webp",
+        // "/front-assets/media/images/LAMB-SHANK-meat-moot-smokingmeat-1-scaled-e1673617386290.webp",
+        // "/front-assets/media/images/LAMB-SHOULDER-MEAT-MOOT-2-2048x1638.webp",
     ];
 
     let currentImageIndex = 0;
@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Initial image zoom-in on load
-    changeBackgroundImage();
+    // changeBackgroundImage();
 
     // Change background every 4 seconds (2 seconds zoom-in, then automatic change)
-    setInterval(changeBackgroundImage, 4100);
+    // setInterval(changeBackgroundImage, 4100);
 });
 
 // Testimonial animation on scroll

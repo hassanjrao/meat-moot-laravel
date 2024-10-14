@@ -7,6 +7,7 @@ use App\Models\Extra;
 use App\Models\FAQ;
 use App\Models\FranchiseRequest;
 use App\Models\FullCourseMeal;
+use App\Models\HomePage;
 use App\Models\MenuHighlight;
 use App\Models\OurMenu;
 use App\Models\Setting;
@@ -37,7 +38,9 @@ class HomeController extends Controller
 
         $settings = Setting::first();
 
-        return view('front.home', compact('menuHighlightsFirst', 'menuHighlightsSecond', 'settings'));
+        $homePage = HomePage::first();
+
+        return view('front.home', compact('menuHighlightsFirst', 'menuHighlightsSecond', 'settings', 'homePage'));
     }
 
 
