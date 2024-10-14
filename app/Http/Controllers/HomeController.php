@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutPage;
 use App\Models\ContactUsRequest;
 use App\Models\Extra;
 use App\Models\FAQ;
@@ -63,7 +64,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('front.about');
+        $aboutPage=AboutPage::first();
+        return view('front.about',compact('aboutPage'));
     }
 
     public function contact()

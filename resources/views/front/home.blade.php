@@ -165,7 +165,7 @@
             <h2 class="subtitle container">
                 {{ $homePage->connect_subheading }}
             </h2>
-            <a href="#connect" class="btn-contact mx-auto">Let's Connect</a>
+            <a href="{{ route('contact') }}" class="btn-contact mx-auto">Let's Connect</a>
             <p class="info-text">
                 {{ $homePage->connect_message }}
             </p>

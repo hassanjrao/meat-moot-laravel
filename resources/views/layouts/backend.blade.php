@@ -242,6 +242,14 @@
                             </a>
                         </li>
 
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('admin/about-page*') ? ' active' : '' }}"
+                                href="{{ route('admin.about-page.index') }}">
+                                <i class="nav-main-link-icon si si-cursor"></i>
+                                <span class="nav-main-link-name">About Page</span>
+                            </a>
+                        </li>
+
 
 
                     </ul>

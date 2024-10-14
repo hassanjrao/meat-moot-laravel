@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAboutPageController;
 use App\Http\Controllers\AdminContactUsRequestController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminExtraController;
@@ -66,5 +67,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('franchise-requests', AdminFranchiseRequestController::class)->only(['index','destroy']);
 
     Route::resource('home-page', AdminHomePageController::class)->only(['index','update']);
+
+
+    Route::resource('about-page', AdminAboutPageController::class)->only(['index','update']);
 
 });

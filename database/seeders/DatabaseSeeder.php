@@ -16,14 +16,15 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call([
-            UserSeeder::class,
-            MenuHighlightSeeder::class,
-            OurMenuSeeder::class,
-            FullCourseMealSeeder::class,
-            ExtraSeeder::class,
-            SettingSeeder::class,
-            FAQSeeder::class,
+            // UserSeeder::class,
+            // MenuHighlightSeeder::class,
+            // OurMenuSeeder::class,
+            // FullCourseMealSeeder::class,
+            // ExtraSeeder::class,
+            // SettingSeeder::class,
+            // FAQSeeder::class,
             HomePageSeeder::class,
+            AboutPageSeeder::class,
         ]);
     }
 }
