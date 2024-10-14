@@ -84,6 +84,10 @@ class AdminSettingController extends Controller
             'logo_main'=>'nullable|image',
             'logo_footer'=>'nullable|image',
             'lets_meat_logo'=>'nullable|image',
+            'google_rating'=>'required',
+            'google_total_reviews'=>'required',
+            'daily_customers'=>'required',
+            'total_branches'=>'required',
         ]);
 
 
@@ -98,6 +102,10 @@ class AdminSettingController extends Controller
             'whatsapp'=>$request->whatsapp,
             'location'=>$request->location,
             'city'=>$request->city,
+            'google_rating'=>$request->google_rating,
+            'google_total_reviews'=>$request->google_total_reviews,
+            'daily_customers'=>$request->daily_customers,
+            'total_branches'=>$request->total_branches,
         ]);
 
 

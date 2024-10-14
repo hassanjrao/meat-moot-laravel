@@ -194,14 +194,28 @@
         <div
             class="container text-center text-white d-flex flex-column flex-lg-row align-content-center justify-content-between w-100 gap-4">
             <div class="stats-section rating w-100">
-                <h1 data-number="4.8">0</h1>
-                <h2 class="stars">★★★★★</h2>
-                <p>5150 Ratings</p>
+                <h1 data-number="{{ $settings->google_rating }}">0</h1>
+                <h2 class="stars">
+                    @if($settings->google_rating > 0)
+                        @for ($i = 0; $i < $settings->google_rating; $i++)
+
+                        {{-- if less than .5 then show half star --}}
+                            @if($settings->google_rating - $i < 1)
+                                <i class="fas fa-star-half-alt"></i>
+                                @continue
+                            @endif
+                            <i class="fas fa-star"></i>
+                            
+
+                        @endfor
+                    @endif
+                </h2>
+                <p>{{ $settings->google_total_reviews }} Ratings</p>
                 <p>Google Reviews</p>
             </div>
             <div class="stats-section customers w-100">
                 <div class="d-flex align-items-center justify-content-center">
-                    <h1 data-number="23325">0</h1>
+                    <h1 data-number="{{ $settings->daily_customers }}">0</h1>
                     <div class="rating-plus">+</div>
                 </div>
                 <p>Daily Customers</p>
@@ -209,7 +223,7 @@
             </div>
             <div class="stats-section branches w-100">
                 <div class="d-flex align-items-center justify-content-center">
-                    <h1 data-number="39">0</h1>
+                    <h1 data-number="{{ $settings->total_branches }}">0</h1>
                     <div class="rating-plus">+</div>
                 </div>
                 <p>Branches</p>

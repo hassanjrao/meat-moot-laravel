@@ -182,6 +182,73 @@
                                     @enderror
                                 </div>
 
+                                <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                                    <?php
+                                    $value = old('google_rating', $settings ? $settings->google_rating : null);
+
+                                    ?>
+                                    <label class="form-label" for="label"> Google Rating <span
+                                            class="text-danger"></span></label>
+                                    <input type="number" step=".01" value="{{ $value }}" class="form-control"
+                                        id="google_rating" name="google_rating" placeholder="Enter google rating">
+                                    @error('google_rating')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                                    <?php
+                                    $value = old('google_total_reviews', $settings ? $settings->google_total_reviews : null);
+
+                                    ?>
+                                    <label class="form-label" for="label"> Google Total Reviews <span
+                                            class="text-danger"></span></label>
+                                    <input type="number" value="{{ $value }}" class="form-control"
+                                        id="google_total_reviews" name="google_total_reviews" placeholder="Enter google reviews">
+                                    @error('google_total_reviews')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                                    <?php
+                                    $value = old('daily_customers', $settings ? $settings->daily_customers : null);
+
+                                    ?>
+                                    <label class="form-label" for="label"> Daily Customers <span
+                                            class="text-danger"></span></label>
+                                    <input type="number" value="{{ $value }}" class="form-control"
+                                        id="daily_customers" name="daily_customers" placeholder="Enter daily customers">
+                                    @error('daily_customers')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                                    <?php
+                                    $value = old('total_branches', $settings ? $settings->total_branches : null);
+
+                                    ?>
+                                    <label class="form-label" for="label"> Total Branches <span
+                                            class="text-danger"></span></label>
+                                    <input type="number" value="{{ $value }}" class="form-control"
+                                        id="total_branches" name="total_branches" placeholder="Enter total branches">
+                                    @error('total_branches')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
                                 <div class="col-lg-12 col-md-4 col-sm-12 mb-4">
                                 </div>
 

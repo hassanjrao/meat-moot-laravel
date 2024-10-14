@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNewColsInSettingsTable extends Migration
+class AddRatingsInSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,13 @@ class AddNewColsInSettingsTable extends Migration
     {
         Schema::table('settings', function (Blueprint $table) {
 
-            // $table->string('logo_main');
+            $table->string('google_rating')->nullable();
+            $table->string('google_total_reviews')->nullable();
 
-            // $table->string('logo_footer');
+            $table->integer('daily_customers')->default(0);
+
+            $table->integer('total_branches')->default(0);
+
         });
     }
 
