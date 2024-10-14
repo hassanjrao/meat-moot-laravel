@@ -86,7 +86,7 @@ class AdminHomePageController extends Controller
             'celebrate_subheading'=>'required',
             'concept_image'=>'nullable|image',
             'connect_bg_image'=>'nullable|image',
-            'celebrate_images'=>'required|array',
+            'celebrate_images'=>'nullable|array',
             'celebrate_images.*'=>'nullable|image',
         ]);
 
