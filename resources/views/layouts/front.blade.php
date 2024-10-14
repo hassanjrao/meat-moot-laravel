@@ -140,11 +140,13 @@
                 <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
                     <div class="content py-5 font-inter w-100">
                         <h2 class="text-light text-center pb-5">Our Location</h2>
-                        <h5 class="text-light text-center">HeadQuater</h5>
+
                         <h6 class="text-light text-center">
-                            Sıtkı Bey Plaza No:82 K:7 34736 Kadıköy - ISTANBUL, TURKEY.
+                            {{ $settings->location }}
                         </h6>
-                        <h6 class="text-light text-center">Istanbol</h6>
+                        <h6 class="text-light text-center">
+                            {{ $settings->city }}
+                        </h6>
                         <img src="{{ asset('front-assets/media/images/letsmeat.png') }}"
                             class="let-meet img-fluid pt-2" />
                     </div>

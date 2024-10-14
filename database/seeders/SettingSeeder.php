@@ -24,6 +24,10 @@ class SettingSeeder extends Seeder
             'tiktok' => 'https://www.tiktok.com',
             'tripadvisor' => 'https://www.tripadvisor.com',
             'whatsapp' => 'https://www.whatsapp.com',
+            'location' => 'Istanbul',
+            'city' => 'Turkey',
+            'logo_main' => '/images/logo.png',
+            'logo_footer' => '/images/logo.png',
         ]);
     }
 }
