@@ -40,7 +40,7 @@ class HomePage extends Model
         $celebrate_images = json_decode($this->celebrate_images, true);
         return array_map(function($image){
             return Storage::url($image);
-        },$this->celebrate_images);
+        },$celebrate_images);
     }
 
 
