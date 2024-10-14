@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAboutPageController;
+use App\Http\Controllers\AdminContactPageController;
 use App\Http\Controllers\AdminContactUsRequestController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminExtraController;
@@ -88,5 +89,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     Route::resource('franchise-steps', AdminInvestorPageStepController::class);
 
+
+    Route::resource('contact-page', AdminContactPageController::class)->only(['index','update']);
 
 });

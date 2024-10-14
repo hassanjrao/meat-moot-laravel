@@ -4,15 +4,24 @@
     <link rel="stylesheet" href="{{ asset('front-assets/css/contact.css') }}" />
 @endsection
 
-@section('page-title', 'Contact')
+@php
+    $contactPage= \App\Models\ContactPage::first();
+@endphp
+
+
+@section('page-title', $contactPage->hero_title)
+
+
 
 
 @section('content')
     <!-- Hero Section  -->
-    <div class="about-image">
+    <div class="about-image" style="background-image: url('{{ $contactPage->hero_bg_image_url }}')">
         <div class="black">
             <div class="heading d-flex flex-column align-content-between justify-content-center mt-5 pt-5">
-                <h1>Get In Touch</h1>
+                <h1>
+                    {{ $contactPage->hero_title }}
+                </h1>
                 <p class="">CONTACT {{ config('app.name') }}</p>
             </div>
         </div>

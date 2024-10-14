@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             OurMenuPageSeeder::class,
             InvestorPageStepSeeder::class,
             InvestorPageSeeder::class,
+            ContactPageSeeder::class,
         ]);
     }
 }
