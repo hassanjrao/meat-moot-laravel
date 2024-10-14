@@ -237,7 +237,7 @@
                                 {{ $homePage->celebrate_subheading }}
                             </p>
                         </div>
-                        <button class="btn btn-contact">Discover More</button>
+                        <a href="{{ route('contact') }}" class="btn btn-contact">Discover More</a>
                     </div>
                 </div>
 
