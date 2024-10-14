@@ -73,7 +73,7 @@ class AdminHomePageController extends Controller
     {
         $request->validate([
             'hero_title'=>'required',
-            'hero_bg_video'=>'required|mimes:mp4,avi,mov,flv,wmv',
+            'hero_bg_video'=>'nullable|mimes:mp4,avi,mov,flv,wmv',
             'concept_heading'=>'required',
             'concept_subheading'=>'required',
             'concept_description'=>'required',
@@ -84,10 +84,10 @@ class AdminHomePageController extends Controller
             'connect_message'=>'required',
             'celebrate_heading'=>'required',
             'celebrate_subheading'=>'required',
-            'concept_image'=>'required|image',
-            'connect_bg_image'=>'required|image',
+            'concept_image'=>'nullable|image',
+            'connect_bg_image'=>'nullable|image',
             'celebrate_images'=>'required|array',
-            'celebrate_images.*'=>'required|image',
+            'celebrate_images.*'=>'nullable|image',
         ]);
 
         $homePage=HomePage::findOrFail($id);

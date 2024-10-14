@@ -51,7 +51,7 @@
                             @endif
                             <label class="form-label" for="label"> *Hero BG Video <span
                                     class="text-danger"></span></label>
-                            <input required type="file" class="form-control" id="hero_bg_video" name="hero_bg_video"
+                            <input type="file" class="form-control" id="hero_bg_video" name="hero_bg_video"
                                 accept="video/mp4">
                             @error('hero_bg_video')
                                 <span class="text-danger" role="alert">
@@ -123,7 +123,7 @@
                             @endif
                             <label class="form-label" for="label"> *Concept Image <span
                                     class="text-danger"></span></label>
-                            <input required type="file" class="form-control" id="concept_image" name="concept_image"
+                            <input type="file" class="form-control" id="concept_image" name="concept_image"
                                 accept="image/*">
                             @error('concept_image')
                                 <span class="text-danger" role="alert">
@@ -240,7 +240,7 @@
                             @endif
                             <label class="form-label" for="label"> *Connect BG Image <span
                                     class="text-danger"></span></label>
-                            <input required type="file" class="form-control" id="connect_bg_image"
+                            <input type="file" class="form-control" id="connect_bg_image"
                                 name="connect_bg_image" accept="image/*">
                             @error('connect_bg_image')
                                 <span class="text-danger" role="alert">
@@ -312,7 +312,7 @@
 
                             <label class="form-label" for="label"> *Celebrate Images <span
                                     class="text-danger"></span></label>
-                            <input required type="file" class="form-control" id="celebrate_images"
+                            <input type="file" class="form-control" id="celebrate_images"
                                 name="celebrate_images[]" accept="image/*" multiple>
                             @error('celebrate_images')
                                 <span class="text-danger" role="alert">
