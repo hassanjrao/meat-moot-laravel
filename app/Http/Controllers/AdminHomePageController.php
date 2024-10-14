@@ -124,6 +124,8 @@ class AdminHomePageController extends Controller
             ]);
         }
 
+
+
         if(count($request->celebrate_images)>0){
             $celebrate_images=[];
             foreach($request->celebrate_images as $image){
@@ -131,7 +133,7 @@ class AdminHomePageController extends Controller
             }
 
             $homePage->update([
-                'celebrate_images'=>$celebrate_images,
+                'celebrate_images'=>json_encode($celebrate_images),
             ]);
         }
 

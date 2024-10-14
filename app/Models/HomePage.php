@@ -14,9 +14,6 @@ class HomePage extends Model
 
     protected $appends=['hero_bg_video_url','concept_image_url','connect_bg_image_url','celebrate_images_url'];
 
-    protected $casts=[
-        'celebrate_images'=>'array'
-    ];
 
     public function getHeroBgVideoUrlAttribute()
     {
