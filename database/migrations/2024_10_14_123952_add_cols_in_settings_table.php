@@ -17,8 +17,8 @@ class AddColsInSettingsTable extends Migration
 
             $table->string('location');
             $table->string('city');
-            $table->string('logo_main');
-            $table->string('logo_footer');
+            // $table->string('logo_main');
+            // $table->string('logo_footer');
             $table->string('lets_meat_logo');
 
         });

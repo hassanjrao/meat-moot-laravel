@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="mainNavbar">
         <div class="container-fluid align-items-center mx-auto justify-content-around">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('front-assets/media/images/cropped-meatmoot-logo-170x58.jpg') }}" alt="Logo"
+                <img src="{{ $settings->logo_main_url }}" alt="Logo"
                     height="" class="ms-auto" style="width: 86px; height: 70px;" />
             </a>
             <button class="navbar-toggler" type="button" id="navbarToggle" aria-controls="navbarNav"
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
                     <div class="content last-section">
-                        <img src="{{ asset('front-assets/media/images/letsmeet.jpg') }}" class="img-fluid" />
+                        <img src="{{ $settings->logo_footer_url }}" class="img-fluid" />
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-lg-4 d-flex justify-content-center align-items-center">
@@ -147,19 +147,19 @@
                         <h6 class="text-light text-center">
                             {{ $settings->city }}
                         </h6>
-                        <img src="{{ asset('front-assets/media/images/letsmeat.png') }}"
+                        <img src="{{ $settings->lets_meat_logo_url }}"
                             class="let-meet img-fluid pt-2" />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col text-center d-flex align-items-center justify-content-center gap-5 px-5 text-end">
-                    <p class="text-light">PRIVACY POLICY</p>
-                    <p class="text-light">TERMS OF USE</p>
+                    {{-- <p class="text-light">PRIVACY POLICY</p>
+                    <p class="text-light">TERMS OF USE</p> --}}
                 </div>
             </div>
             <p class="text-light text-center mb-0">
-                Copyright © 2024 Meat Moot | Powered by Meat Moot
+                Copyright © 2024 {{ config('app.name') }}
             </p>
         </div>
     </div>

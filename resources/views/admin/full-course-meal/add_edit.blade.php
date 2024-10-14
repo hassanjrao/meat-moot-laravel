@@ -77,6 +77,7 @@
 
                                 @if ($fullCourseMeal && $fullCourseMeal->image_path)
                                     <img src="{{ $fullCourseMeal->image_url }}" alt="image" class="img-fluid" style="width: 100px">
+                                    <br>
                                 @endif
 
                                 <label class="form-label" for="label">Image <span class="text-danger">*</span></label>

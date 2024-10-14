@@ -77,10 +77,15 @@ class AdminSettingController extends Controller
             'twitter'=>'nullable',
             'instagram'=>'nullable',
             'tiktok'=>'nullable',
-            'youtube'=>'nullable',
             'tripadvisor'=>'nullable',
             'whatsapp'=>'nullable',
+            'location'=>'nullable',
+            'city'=>'nullable',
+            'logo_main'=>'nullable|image',
+            'logo_footer'=>'nullable|image',
+            'lets_meat_logo'=>'nullable|image',
         ]);
+
 
         $setting=Setting::findorfail($id);
 
@@ -89,10 +94,30 @@ class AdminSettingController extends Controller
             'twitter'=>$request->twitter,
             'instagram'=>$request->instagram,
             'tiktok'=>$request->tiktok,
-            'youtube'=>$request->youtube,
             'tripadvisor'=>$request->tripadvisor,
             'whatsapp'=>$request->whatsapp,
+            'location'=>$request->location,
+            'city'=>$request->city,
         ]);
+
+
+        if($request->hasFile('logo_main')){
+            $setting->update([
+                'logo_main'=>$request->file('logo_main')->store('images'),
+            ]);
+        }
+
+        if($request->hasFile('logo_footer')){
+            $setting->update([
+                'logo_footer'=>$request->file('logo_footer')->store('images'),
+            ]);
+        }
+
+        if($request->hasFile('lets_meat_logo')){
+            $setting->update([
+                'lets_meat_logo'=>$request->file('lets_meat_logo')->store('images'),
+            ]);
+        }
 
 
         return redirect()->route('admin.settings.index')->withToastSuccess('Updated successfully');
