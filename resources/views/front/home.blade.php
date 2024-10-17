@@ -44,6 +44,11 @@
                         <img src="{{ asset('front-assets/media/images/download (4).svg') }}" class=""
                             alt="" /></a>
                 @endif
+                @if ($settings->youtube)
+                    <a target='_blank' href="{{ $settings->youtube }}">
+                        <i class="fab fa-youtube fa-2x text-light"></i>
+                    </a>
+                @endif
             </div>
         </div>
     </div>
@@ -196,17 +201,14 @@
             <div class="stats-section rating w-100">
                 <h1 data-number="{{ $settings->google_rating }}">0</h1>
                 <h2 class="stars">
-                    @if($settings->google_rating > 0)
+                    @if ($settings->google_rating > 0)
                         @for ($i = 0; $i < $settings->google_rating; $i++)
-
-                        {{-- if less than .5 then show half star --}}
-                            @if($settings->google_rating - $i < 1)
+                            {{-- if less than .5 then show half star --}}
+                            @if ($settings->google_rating - $i < 1)
                                 <i class="fas fa-star-half-alt"></i>
                                 @continue
                             @endif
                             <i class="fas fa-star"></i>
-                            
-
                         @endfor
                     @endif
                 </h2>

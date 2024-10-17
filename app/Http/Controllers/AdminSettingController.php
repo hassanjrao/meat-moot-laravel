@@ -76,6 +76,7 @@ class AdminSettingController extends Controller
             'facebook'=>'nullable',
             'twitter'=>'nullable',
             'instagram'=>'nullable',
+            'youtube'=>'nullable',
             'tiktok'=>'nullable',
             'tripadvisor'=>'nullable',
             'whatsapp'=>'nullable',
@@ -106,6 +107,7 @@ class AdminSettingController extends Controller
             'google_total_reviews'=>$request->google_total_reviews,
             'daily_customers'=>$request->daily_customers,
             'total_branches'=>$request->total_branches,
+            'youtube'=>$request->youtube,
         ]);
 
 

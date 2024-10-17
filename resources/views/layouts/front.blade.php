@@ -128,6 +128,13 @@
                                         </a>
                                     </div>
                                 @endif
+                                @if ($settings->youtube)
+                                    <div style="margin-top: -18px">
+                                        <a href="{{ $settings->youtube }}" target="_blank">
+                                            <i class="fab fa-youtube fa-2x text-light"></i>
+                                        </a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

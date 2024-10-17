@@ -98,7 +98,7 @@
                                 </div>
 
 
-                                {{-- <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                                 <div class="col-lg-4 col-md-4 col-sm-12 mb-4"> 
                                     <?php
                                     $value = old('youtube', $settings ? $settings->youtube : null);
 
@@ -112,7 +112,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div> --}}
+                                </div>
 
 
                                 <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
