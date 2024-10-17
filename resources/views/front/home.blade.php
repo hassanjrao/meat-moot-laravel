@@ -63,8 +63,8 @@
             </div>
             <!-- Text Section -->
             <div class="menu-content d-flex flex-column justify-content-start align-items-start">
-                <img src="{{ asset('front-assets/media/images/download (14).svg') }}" class="fork-image m-auto m-lg-0"
-                    alt="" />
+                {{-- <img src="{{ asset('front-assets/media/images/download (14).svg') }}" class="fork-image m-auto m-lg-0"
+                    alt="" /> --}}
                 <h2 class="menu-heading">
                     {{ $homePage->concept_heading }}
                 </h2>
@@ -76,8 +76,8 @@
                 </p>
             </div>
             <div class="image-container mb-4 mb-lg-0">
-                <img src="{{ asset('front-assets/media/images/download (13).svg') }}" alt="Menu Image"
-                    class="knife-image" />
+                {{-- <img src="{{ asset('front-assets/media/images/download (13).svg') }}" alt="Menu Image"
+                    class="knife-image" /> --}}
             </div>
         </div>
     </section>
