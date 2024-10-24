@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+    @php
+    $settings = \App\Models\Setting::first();
+@endphp
+
 
 <head>
     <meta charset="UTF-8" />
@@ -10,6 +14,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" />
 
 
+    <link rel="icon" href="{{ $settings->logo_main_url }}" type="image/gif" sizes="16x16">
+
 
     <link rel="stylesheet" href="{{ asset('front-assets/css/navbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/css/footer.css') }}" />
@@ -18,9 +24,6 @@
     @yield('styles')
 </head>
 
-@php
-    $settings = \App\Models\Setting::first();
-@endphp
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="mainNavbar">
